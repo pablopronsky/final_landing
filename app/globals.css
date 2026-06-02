@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-graphite-dark: #1E1E20;
+  --color-graphite-medium: #3A3A3C;
+  --color-bone: #ECE5D6;
+  --color-copper: #B06F4E;
+  --color-copper-light: #C98A66;
+
+  --font-display: var(--font-barlow-condensed), sans-serif;
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-barlow), sans-serif;
+  --font-mono: var(--font-ibm-plex), monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased bg-graphite-dark text-bone;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
