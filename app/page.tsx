@@ -79,18 +79,17 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="block text-[#B06F4E] text-[12px] font-bold tracking-[0.4em] uppercase mb-6"
           >
-            Nivel de Referencia Absoluto
+            Superficies y Terminaciones
           </motion.span>
           
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-[64px] md:text-[90px] lg:text-[110px] leading-[0.85] font-bold uppercase mb-6 tracking-tighter text-balance"
+            className="font-display text-[64px] md:text-[80px] lg:text-[100px] leading-[0.85] font-bold uppercase mb-6 tracking-tighter text-balance"
           >
-            El piso es la<br />
-            cota cero<br />
-            del espacio.
+            Cada obra tiene un<br />
+            punto de partida.
           </motion.h1>
 
           <motion.div
@@ -104,19 +103,33 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-[28px] md:text-[36px] italic text-[#B06F4E] mb-8 font-serif leading-tight"
+            className="text-[32px] md:text-[40px] italic text-[#ECE5D6] mb-8 font-serif leading-tight drop-shadow-md"
           >
-            “Cada obra tiene un punto de partida.”
+            Nosotros lo llamamos <span className="text-[#B06F4E] font-bold">cota cero</span>.
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-lg text-[#ECE5D6] opacity-90 max-w-lg leading-relaxed font-medium"
+            className="text-lg text-[#ECE5D6] opacity-100 max-w-lg leading-relaxed font-medium drop-shadow-sm"
           >
-            Si el punto de partida es incorrecto, todo lo que se construya encima también lo será.
+            No solo vendemos pisos y revestimientos. Controlamos cómo se instalan. Un protocolo de obra que no deja nada librado al azar: del sustrato a la última terminación.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-6 mt-12 items-start sm:items-center"
+          >
+            <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 text-[12px] font-bold uppercase tracking-widest hover:bg-[#C98A66] transition-colors">
+              Agendá tu relevamiento
+            </a>
+            <a href="#protocolo" className="flex items-center gap-2 text-[#ECE5D6] text-[12px] font-bold uppercase tracking-widest hover:text-[#B06F4E] transition-colors">
+              Conocé el protocolo <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -126,7 +139,7 @@ export default function Home() {
           <div>
             <span className="text-[10px] font-bold tracking-widest text-[#3A3A3C] uppercase">01 — El Concepto</span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter mt-2 text-balance leading-[0.9]">
-              No vendemos pisos.<br />
+              No solo vendemos pisos y revestimientos.<br />
               <span className="text-[#3A3A3C]">Controlamos cómo se instalan.</span>
             </h2>
           </div>
