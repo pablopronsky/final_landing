@@ -55,17 +55,15 @@ export default function Home() {
       {/* HEADER / NAVIGATION */}
       <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-10 py-6 border-b border-[#3A3A3C] backdrop-blur-md bg-[#1E1E20]/90 text-[#ECE5D6]">
         <div className="flex items-center gap-4">
-          <div className="flex flex-col leading-none z-50">
-            <span className="font-display text-2xl font-bold tracking-tighter">N<span className="text-[#B06F4E]">C</span></span>
-            <div className="h-[1px] w-full bg-[#B06F4E] mt-1"></div>
+          <div className="flex flex-col z-50">
+            <Image src="/logo.svg" alt="Cota Cero" width={180} height={40} className="w-auto h-5 md:h-6" priority />
           </div>
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase ml-4 hidden sm:inline-block z-50">COTA CERO — City Bell</span>
         </div>
         
         {/* DESKTOP NAV */}
         <div className="hidden md:flex gap-8 items-center">
           <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
-          <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-6 py-3 rounded-full text-[12px] font-bold uppercase tracking-wider hover:bg-[#C98A66] transition-colors">
+          <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-6 py-3 text-[12px] font-bold uppercase tracking-wider hover:bg-[#C98A66] transition-colors">
             Agendá tu relevamiento
           </a>
         </div>
@@ -93,7 +91,7 @@ export default function Home() {
                 <a href="#superficies" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Superficies</a>
                 <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
               </nav>
-              <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 rounded-full text-[12px] font-bold uppercase tracking-wider">
+              <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 text-[12px] font-bold uppercase tracking-wider">
                 Agendá tu relevamiento
               </a>
             </motion.div>
