@@ -24,6 +24,25 @@ const services = [
   { img: s6Img, title: 'Restauración', desc: 'Superficies clásicas recuperadas a nuevo. Pulido e hidrolaqueado sin alterar la esencia original.' },
 ];
 
+const ProofImage = ({ src, alt, label }: { src: string, alt: string, label: string }) => {
+  const [error, setError] = useState(false);
+
+  return (
+    <div className="relative aspect-[4/3] bg-[#1E1E20] flex border border-[#3A3A3C] items-center justify-center p-6 text-center overflow-hidden group">
+      {!error && (
+        <img 
+          src={src} 
+          alt={alt} 
+          className="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-700 group-hover:scale-105" 
+          loading="lazy" 
+          onError={() => setError(true)} 
+        />
+      )}
+      <span className="text-[#B06F4E]/60 font-mono text-sm uppercase tracking-widest relative z-0">{label}</span>
+    </div>
+  );
+};
+
 const protocolSteps = [
   { id: '01', title: 'Relevamiento', desc: 'Medimos humedad y planimetría. Evitamos cotizar sobre sorpresas ocultas en la base.' },
   { id: '02', title: 'Preparación', desc: 'Acondicionamos y nivelamos el sustrato. Aseguramos una base perfecta para que el piso no copie imperfecciones.' },
@@ -239,43 +258,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION VENTA COMUN VS COTA CERO */}
-      <section className="bg-[#ECE5D6] text-[#1E1E20] py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]">
-        <div className="max-w-5xl">
-          <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">03 — La Diferencia</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-12 leading-none">Por qué Cota Cero</h2>
-          
-          <div className="space-y-6">
-            <div className="flex items-start gap-4 opacity-50 grayscale pt-6 border-t border-[#1E1E20]/10">
-              <div className="w-5 h-5 flex-shrink-0 border border-[#1E1E20] flex items-center justify-center text-[10px] mt-1">×</div>
-              <div>
-                <span className="block font-bold mb-1">Venta tradicional</span>
-                <p className="text-sm">Te venden el material y queda en vos resolver quién y cómo lo instala asumiendo el riesgo.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 pt-6 border-t border-[#B06F4E]/30">
-              <div className="w-5 h-5 flex-shrink-0 bg-[#B06F4E] flex items-center justify-center text-[#ECE5D6] text-[10px] mt-1">✓</div>
-              <div>
-                <span className="block font-bold mb-1 text-[#B06F4E]">Diagnóstico Técnico</span>
-                <p className="text-sm font-medium">Medimos la humedad y planimetría antes de presupuestar. Sin sorpresas.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 pt-6 border-t border-[#B06F4E]/30">
-              <div className="w-5 h-5 flex-shrink-0 bg-[#B06F4E] flex items-center justify-center text-[#ECE5D6] text-[10px] mt-1">✓</div>
-              <div>
-                <span className="block font-bold mb-1 text-[#B06F4E]">Instalación Certificada</span>
-                <p className="text-sm font-medium">Registro auditable de cada etapa. Sabés exactamente qué se hizo debajo de tu piso.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION PRÁCTICA (NEW) */}
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 xl:mb-20">
-             <span className="text-[#ECE5D6]/50 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">04 — Práctica</span>
+             <span className="text-[#ECE5D6]/50 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">03 — Práctica</span>
              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none mb-6">
               Así trabajamos.<br />Mirá la diferencia.
              </h2>
@@ -285,15 +272,9 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="aspect-[4/3] bg-[#3A3A3C]/30 flex border border-[#3A3A3C] items-center justify-center p-6 text-center group cursor-not-allowed">
-              <span className="text-[#ECE5D6]/50 font-mono text-sm uppercase tracking-widest group-hover:text-[#B06F4E] transition-colors">[FOTO: Medición de humedad]</span>
-            </div>
-            <div className="aspect-[4/3] bg-[#3A3A3C]/30 flex border border-[#3A3A3C] items-center justify-center p-6 text-center group cursor-not-allowed">
-              <span className="text-[#ECE5D6]/50 font-mono text-sm uppercase tracking-widest group-hover:text-[#B06F4E] transition-colors">[FOTO: Nivelación de sustrato]</span>
-            </div>
-            <div className="aspect-[4/3] bg-[#3A3A3C]/30 flex border border-[#3A3A3C] items-center justify-center p-6 text-center group cursor-not-allowed">
-              <span className="text-[#ECE5D6]/50 font-mono text-sm uppercase tracking-widest group-hover:text-[#B06F4E] transition-colors">[FOTO: Cortes y zócalos]</span>
-            </div>
+            <ProofImage src="/obra/medicion-humedad.jpg" alt="Medición de humedad y planimetría en obra" label="[FOTO: Medición de humedad]" />
+            <ProofImage src="/obra/nivelacion-sustrato.jpg" alt="Nivelación y preparación de sustrato" label="[FOTO: Nivelación de sustrato]" />
+            <ProofImage src="/obra/cortes-zocalos.jpg" alt="Cortes milimétricos y terminación de zócalos" label="[FOTO: Cortes y zócalos]" />
           </div>
         </div>
       </section>
@@ -301,7 +282,7 @@ export default function Home() {
       {/* SECTION 5: SUPERFICIES Y TERMINACIONES (SERVICES) */}
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="superficies">
         <div className="mb-16 md:mb-24">
-           <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">05 — Soluciones</span>
+           <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">04 — Soluciones</span>
            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-none text-balance">
             Superficies de<br />Alta Gama
            </h2>
@@ -335,7 +316,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="faq">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">06 — Preguntas Frecuentes</span>
+            <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">05 — Preguntas Frecuentes</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none">Lo que necesitás saber.</h2>
           </div>
 
@@ -376,7 +357,7 @@ export default function Home() {
 
       {/* SECTION 5: CONTACTO / CTA & FOOTER */}
       <section className="bg-[#ECE5D6] text-[#1E1E20] px-6 md:px-12 lg:px-24 py-24 md:py-32 flex flex-col items-center text-center relative" id="contacto">
-        <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6 block">07 — Contacto</span>
+        <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6 block">06 — Contacto</span>
         <h3 className="font-display text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase leading-none tracking-tighter text-balance mb-6 max-w-4xl mx-auto">
           Antes de elegir el material, revisemos si tu obra está lista para recibirlo.
         </h3>
@@ -384,7 +365,7 @@ export default function Home() {
           Solicitá un diagnóstico técnico previo en obra, sin compromiso.
         </p>
 
-        <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m%C2%B2]." className="flex items-center gap-4 bg-[#1E1E20] text-[#ECE5D6] px-8 md:px-10 py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-[#3A3A3C] border border-[#B06F4E] transition-all duration-300 shadow-[0_10px_30px_rgba(176,111,78,0.2)] mb-16">
+        <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-[#1E1E20] text-[#ECE5D6] px-8 md:px-10 py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-[#3A3A3C] border border-[#B06F4E] transition-all duration-300 shadow-[0_10px_30px_rgba(176,111,78,0.2)] mb-16">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#B06F4E" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
@@ -403,7 +384,7 @@ export default function Home() {
             <span>IG @cotacero_superficies</span>
           </div>
           <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center">
-             <span className="text-[#B06F4E]">WhatsApp: +54 9 221 568 0778</span>
+             <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." target="_blank" rel="noopener noreferrer" className="text-[#B06F4E] hover:text-[#C98A66] transition-colors">WhatsApp: +54 9 221 568 0778</a>
              <span>© {new Date().getFullYear()} Cota Cero</span>
           </div>
         </footer>
@@ -411,7 +392,7 @@ export default function Home() {
 
       {/* MOBILE STICKY CTA */}
       <div className="md:hidden fixed bottom-0 left-0 w-full p-4 z-40 pointer-events-none">
-        <a href="#contacto" className="pointer-events-auto bg-[#B06F4E] text-[#1E1E20] w-full py-4 flex items-center justify-center text-[12px] font-bold uppercase tracking-widest shadow-lg">
+        <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." target="_blank" rel="noopener noreferrer" className="pointer-events-auto bg-[#B06F4E] text-[#1E1E20] w-full py-4 flex items-center justify-center text-[12px] font-bold uppercase tracking-widest shadow-lg">
           Agendá tu diagnóstico
         </a>
       </div>
