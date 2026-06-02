@@ -16,28 +16,29 @@ import s6Img from '../src/assets/images/servicio_06_1780368985507.png';
 import ctaImg from '../src/assets/images/cta_bg_1780369000320.png';
 
 const services = [
-  { img: s1Img, title: 'Pisos SPC & Vinílicos', desc: 'Resistencia absoluta al agua y alto tránsito, con textura hiperrealista.' },
-  { img: s2Img, title: 'Pisos Flotantes', desc: 'Calidez acústica y visual con sistemas de anclaje de última generación.' },
-  { img: s3Img, title: 'Madera Natural', desc: 'Ingeniería y macizos. La nobleza del material vivo, instalada con rigor técnico.' },
-  { img: s4Img, title: 'Decks WPC', desc: 'Exteriores inalterables. Cero mantenimiento estructural.' },
-  { img: s5Img, title: 'Revestimientos', desc: 'Paneles ranurados y placas arquitectónicas para interiores.' },
-  { img: s6Img, title: 'Restauración', desc: 'Pulido, hidrolaqueado y recuperación superficial a nuevo.' },
+  { img: s1Img, title: 'Pisos SPC & Vinílicos', desc: 'Resistencia absoluta al agua con textura hiperrealista. Ideal para cocinas, baños y zonas de alto tránsito.' },
+  { img: s2Img, title: 'Pisos Flotantes', desc: 'Calidez acústica y visual impecable. El estándar para dormitorios y livings que exigen confort.' },
+  { img: s3Img, title: 'Madera Natural', desc: 'La nobleza del material vivo, instalada con rigor técnico. Para proyectos donde la exclusividad no es negociable.' },
+  { img: s4Img, title: 'Decks WPC', desc: 'Exteriores inalterables al sol y la lluvia. Solución definitiva con cero mantenimiento estructural.' },
+  { img: s5Img, title: 'Revestimientos', desc: 'Acentos arquitectónicos para interiores. Paneles ranurados y placas de diseño con anclajes invisibles.' },
+  { img: s6Img, title: 'Restauración', desc: 'Superficies clásicas recuperadas a nuevo. Pulido e hidrolaqueado sin alterar la esencia original.' },
 ];
 
 const protocolSteps = [
-  { id: '01', title: 'Relevamiento', desc: 'Medición de humedad, planimetría y estado del sustrato.' },
-  { id: '02', title: 'Preparación', desc: 'Acondicionamiento y nivelación de la base.' },
-  { id: '03', title: 'Aclimatación', desc: 'Reposo técnico del material en el ambiente.' },
-  { id: '04', title: 'Instalación', desc: 'Ejecución bajo norma con instaladores certificados.' },
-  { id: '05', title: 'Terminaciones', desc: 'Ajuste de zócalos, perfiles y transiciones precisas.' },
-  { id: '06', title: 'Entrega', desc: 'Registro auditable de obra final y limpieza.' },
+  { id: '01', title: 'Relevamiento', desc: 'Medimos humedad y planimetría. Evitamos cotizar sobre sorpresas ocultas en la base.' },
+  { id: '02', title: 'Preparación', desc: 'Acondicionamos y nivelamos el sustrato. Aseguramos una base perfecta para que el piso no copie imperfecciones.' },
+  { id: '03', title: 'Aclimatación', desc: 'El material reposa en el ambiente definitivo. Evitamos que se expanda, se abra o se deforme al instalarlo.' },
+  { id: '04', title: 'Instalación', desc: 'Ejecución bajo norma técnica estricta. Controlamos la dilatación y el anclaje para evitar fallas a futuro.' },
+  { id: '05', title: 'Terminaciones', desc: 'Ajuste de zócalos y perfiles. El nivel de detalle que separa una colocación común de una terminación premium.' },
+  { id: '06', title: 'Entrega', desc: 'Limpieza y registro auditable. Te entregamos la obra documentando que cada etapa se cumplió.' },
 ];
 
 const faqs = [
-  { q: '¿En qué se diferencia el SPC del piso flotante?', a: 'El SPC (Stone Plastic Composite) es 100% resistente al agua y más rígido gracias a su núcleo de piedra, ideal para cocinas y baños. El flotante tradicional ofrece mayor calidez acústica pero es sensible a la humedad prolongada.' },
-  { q: '¿Qué significa aclimatar el piso?', a: 'Es el proceso técnico donde el material descansa en el ambiente donde será instalado (generalmente 48 a 72hs). Permite que las tablas se adapten a la temperatura y humedad del lugar, evitando futuras expansiones, contracciones o deformaciones.' },
-  { q: '¿Tengo que preparar mi contrapiso antes de que vengan?', a: 'Te recomendamos consultarlo con nosotros en la etapa de relevamiento. En Cota Cero realizamos diagnóstico de humedad y planimetría. Si el sustrato no está en condiciones, nosotros mismos nos encargamos de nivelarlo y prepararlo.' },
-  { q: '¿Instalan materiales que yo ya compré?', a: 'Sí. Nuestro valor real es la instalación. Si ya compraste un material premium, hacemos el relevamiento técnico igual y lo instalamos bajo nuestro protocolo para asegurar que no falle de base.' }
+  { q: '¿Cómo funciona el presupuesto? ¿Cuánto sale?', a: 'No damos presupuesto sin diagnóstico previo. Sin medir la humedad y el estado del contrapiso, cualquier número es mentira. Primero medimos, después hablamos de inversión.' },
+  { q: '¿Tengo que preparar mi contrapiso antes de que vengan?', a: 'No necesariamente. Nuestro equipo evalúa si el sustrato está en condiciones durante el diagnóstico técnico. De ser necesario, nos encargamos nosotros de la nivelación y preparación.' },
+  { q: '¿Instalan materiales que yo ya compré?', a: 'Sí. Nuestro valor central es controlar la instalación. Si ya invertiste en el material, repetimos el diagnóstico técnico y aplicamos nuestro protocolo para asegurar que no falle por errores de base.' },
+  { q: '¿Qué revisan en el relevamiento?', a: 'Medimos los niveles de humedad residual con higrómetro, verificamos la planimetría (que el piso esté recto y a nivel) y evaluamos la solidez general del contrapiso.' },
+  { q: '¿Trabajan en obras chicas o solo proyectos grandes?', a: 'Trabajamos principalmente sobre obra de arquitectura, reformas integrales y residencias de alta gama. Evaluamos cada caso: el volumen no es el filtro, sino la expectativa del cliente sobre el rigor técnico.' }
 ];
 
 export default function Home() {
@@ -64,7 +65,7 @@ export default function Home() {
         <div className="hidden md:flex gap-8 items-center">
           <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
           <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-6 py-3 text-[12px] font-bold uppercase tracking-wider hover:bg-[#C98A66] transition-colors">
-            Agendá tu relevamiento
+            Agendá tu diagnóstico
           </a>
         </div>
 
@@ -92,7 +93,7 @@ export default function Home() {
                 <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
               </nav>
               <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 text-[12px] font-bold uppercase tracking-wider">
-                Agendá tu relevamiento
+                Agendá tu diagnóstico
               </a>
             </motion.div>
           )}
@@ -120,7 +121,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="block text-[#B06F4E] text-[12px] font-bold tracking-[0.4em] uppercase mb-6"
           >
-            Superficies y Terminaciones
+            Superficies y Terminaciones · City Bell
           </motion.span>
           
           <motion.h1
@@ -155,7 +156,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-lg text-[#ECE5D6] opacity-100 max-w-lg leading-relaxed font-medium drop-shadow-sm"
           >
-            No despachamos cajas de materiales. Controlamos cómo se instalan. Un protocolo de obra que no deja nada librado al azar: del sustrato a la última terminación.
+            Un piso premium no se arruina por el material, sino por cómo se instala. No despachamos cajas: controlamos la instalación completa bajo un estricto protocolo de obra.
           </motion.p>
 
           <motion.div
@@ -165,7 +166,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 mt-12 items-start sm:items-center"
           >
             <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 text-[12px] font-bold uppercase tracking-widest hover:bg-[#C98A66] transition-colors">
-              Agendá tu relevamiento
+              Agendá tu diagnóstico
             </a>
             <a href="#protocolo" className="flex items-center gap-2 text-[#ECE5D6] text-[12px] font-bold uppercase tracking-widest hover:text-[#B06F4E] transition-colors">
               Conocé el protocolo <ArrowRight className="w-4 h-4" />
@@ -174,14 +175,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRUST BAR */}
+      <div className="bg-[#B06F4E] text-[#1E1E20] py-8 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="flex flex-col gap-2 border-l-2 border-[#1E1E20]/20 pl-4">
+            <h4 className="font-display font-bold uppercase tracking-tight text-lg">Diagnóstico Previo</h4>
+            <p className="text-sm font-medium opacity-90 leading-relaxed">Medimos humedad y niveles antes de presupuestar.</p>
+          </div>
+          <div className="flex flex-col gap-2 border-l-2 border-[#1E1E20]/20 pl-4">
+            <h4 className="font-display font-bold uppercase tracking-tight text-lg">Supervisión Técnica</h4>
+            <p className="text-sm font-medium opacity-90 leading-relaxed">Instalación controlada sin dejar nada librado al azar.</p>
+          </div>
+          <div className="flex flex-col gap-2 border-l-2 border-[#1E1E20]/20 pl-4">
+            <h4 className="font-display font-bold uppercase tracking-tight text-lg">Registro Auditable</h4>
+            <p className="text-sm font-medium opacity-90 leading-relaxed">Documentación de cada etapa técnica hasta la entrega.</p>
+          </div>
+        </div>
+      </div>
+
       {/* SECTION 2: THE MANIFESTO */}
       <section className="bg-[#ECE5D6] text-[#1E1E20] py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]" id="manifiesto">
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-12 gap-6">
           <div>
             <span className="text-[10px] font-bold tracking-widest text-[#3A3A3C] uppercase">01 — El Concepto</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter mt-2 text-balance leading-none">
-              El piso no es el final.<br />
-              <span className="text-[#3A3A3C]">Es la fundación visible.</span>
+              El problema de un piso casi nunca empieza en el piso.
             </h2>
           </div>
           <div className="h-[1px] flex-1 mx-8 bg-[#1E1E20] opacity-20 mb-3 hidden lg:block"></div>
@@ -189,10 +207,10 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-lg md:text-xl font-medium opacity-90 leading-relaxed max-w-5xl">
           <p>
-            En arquitectura, la <span className="font-bold text-[#B06F4E]">cota cero</span> es el nivel de referencia desde el cual se mide todo el proyecto. La industria se acostumbró a vender metros cuadrados.
+            La durabilidad y estética de una superficie premium dependen en un 80% del estado del sustrato y el rigor de la instalación, no solo de la calidad del material. La industria se acostumbró a vender metros cuadrados.
           </p>
           <p>
-            Nosotros cambiamos el paradigma: la durabilidad de un piso premium depende en un 80% del sustrato y la técnica de instalación.
+            Nosotros cambiamos el paradigma: medimos, acondicionamos e instalamos. En arquitectura, la <span className="font-bold text-[#B06F4E]">cota cero</span> es el nivel de referencia desde el cual se mide todo el proyecto. Es la fundación visible que sostiene el resto de tu obra.
           </p>
         </div>
       </section>
@@ -232,31 +250,58 @@ export default function Home() {
               <div className="w-5 h-5 flex-shrink-0 border border-[#1E1E20] flex items-center justify-center text-[10px] mt-1">×</div>
               <div>
                 <span className="block font-bold mb-1">Venta tradicional</span>
-                <p className="text-sm">Te venden el material y vos buscás quién lo instale.</p>
+                <p className="text-sm">Te venden el material y queda en vos resolver quién y cómo lo instala asumiendo el riesgo.</p>
               </div>
             </div>
             <div className="flex items-start gap-4 pt-6 border-t border-[#B06F4E]/30">
               <div className="w-5 h-5 flex-shrink-0 bg-[#B06F4E] flex items-center justify-center text-[#ECE5D6] text-[10px] mt-1">✓</div>
               <div>
                 <span className="block font-bold mb-1 text-[#B06F4E]">Diagnóstico Técnico</span>
-                <p className="text-sm font-medium">Medición de humedad y niveles antes de cotizar.</p>
+                <p className="text-sm font-medium">Medimos la humedad y planimetría antes de presupuestar. Sin sorpresas.</p>
               </div>
             </div>
             <div className="flex items-start gap-4 pt-6 border-t border-[#B06F4E]/30">
               <div className="w-5 h-5 flex-shrink-0 bg-[#B06F4E] flex items-center justify-center text-[#ECE5D6] text-[10px] mt-1">✓</div>
               <div>
-                <span className="block font-bold mb-1 text-[#B06F4E]">Instalación bajo protocolo</span>
-                <p className="text-sm font-medium">Registro auditable de cada etapa del proceso.</p>
+                <span className="block font-bold mb-1 text-[#B06F4E]">Instalación Certificada</span>
+                <p className="text-sm font-medium">Registro auditable de cada etapa. Sabés exactamente qué se hizo debajo de tu piso.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: SUPERFICIES Y TERMINACIONES (SERVICES) */}
+      {/* SECTION PRÁCTICA (NEW) */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 xl:mb-20">
+             <span className="text-[#ECE5D6]/50 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">04 — Práctica</span>
+             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none mb-6">
+              Así trabajamos.<br />Mirá la diferencia.
+             </h2>
+             <p className="text-lg md:text-xl text-[#ECE5D6] opacity-80 max-w-2xl font-medium leading-relaxed">
+              La cota cero se construye en la obra. Medición con higrómetro, corrección de niveles, cortes milimétricos y terminaciones exactas.
+             </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="aspect-[4/3] bg-[#3A3A3C]/30 flex border border-[#3A3A3C] items-center justify-center p-6 text-center group cursor-not-allowed">
+              <span className="text-[#ECE5D6]/50 font-mono text-sm uppercase tracking-widest group-hover:text-[#B06F4E] transition-colors">[FOTO: Medición de humedad]</span>
+            </div>
+            <div className="aspect-[4/3] bg-[#3A3A3C]/30 flex border border-[#3A3A3C] items-center justify-center p-6 text-center group cursor-not-allowed">
+              <span className="text-[#ECE5D6]/50 font-mono text-sm uppercase tracking-widest group-hover:text-[#B06F4E] transition-colors">[FOTO: Nivelación de sustrato]</span>
+            </div>
+            <div className="aspect-[4/3] bg-[#3A3A3C]/30 flex border border-[#3A3A3C] items-center justify-center p-6 text-center group cursor-not-allowed">
+              <span className="text-[#ECE5D6]/50 font-mono text-sm uppercase tracking-widest group-hover:text-[#B06F4E] transition-colors">[FOTO: Cortes y zócalos]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: SUPERFICIES Y TERMINACIONES (SERVICES) */}
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="superficies">
         <div className="mb-16 md:mb-24">
-           <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">04 — Soluciones</span>
+           <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">05 — Soluciones</span>
            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-none text-balance">
             Superficies de<br />Alta Gama
            </h2>
@@ -290,7 +335,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="faq">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">05 — Preguntas Frecuentes</span>
+            <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">06 — Preguntas Frecuentes</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none">Lo que necesitás saber.</h2>
           </div>
 
@@ -331,20 +376,24 @@ export default function Home() {
 
       {/* SECTION 5: CONTACTO / CTA & FOOTER */}
       <section className="bg-[#ECE5D6] text-[#1E1E20] px-6 md:px-12 lg:px-24 py-24 md:py-32 flex flex-col items-center text-center relative" id="contacto">
-        <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6 block">06 — Contacto</span>
-        <h3 className="font-display text-[50px] md:text-[80px] lg:text-[100px] font-bold uppercase leading-none tracking-tighter text-balance mb-6">
-          El estándar de tu obra empieza acá.
+        <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6 block">07 — Contacto</span>
+        <h3 className="font-display text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase leading-none tracking-tighter text-balance mb-6 max-w-4xl mx-auto">
+          Antes de elegir el material, revisemos si tu obra está lista para recibirlo.
         </h3>
-        <p className="text-2xl md:text-[32px] italic text-[#B06F4E] font-serif mb-16">
-          Hablemos de tu proyecto.
+        <p className="text-xl md:text-[24px] italic text-[#B06F4E] font-serif mb-12">
+          Solicitá un diagnóstico técnico previo en obra, sin compromiso.
         </p>
 
-        <a href="https://wa.me/5492210000000" className="flex items-center gap-4 bg-[#1E1E20] text-[#ECE5D6] px-8 md:px-10 py-4 md:py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-[#3A3A3C] border border-[#B06F4E] transition-all duration-300 shadow-[0_10px_30px_rgba(176,111,78,0.2)] mb-24 md:mb-32">
+        <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m%C2%B2]." className="flex items-center gap-4 bg-[#1E1E20] text-[#ECE5D6] px-8 md:px-10 py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-[#3A3A3C] border border-[#B06F4E] transition-all duration-300 shadow-[0_10px_30px_rgba(176,111,78,0.2)] mb-16">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#B06F4E" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          Agendá tu relevamiento
+          Agendá tu diagnóstico
         </a>
+
+        <p className="text-sm md:text-base opacity-70 font-medium max-w-2xl px-6 mb-24 md:mb-32">
+          Trabajamos sobre obra de arquitectura, reformas integrales y residencias de alta gama. Tomamos un número limitado de obras por mes para sostener el protocolo.
+        </p>
 
         <div className="w-full h-[1px] bg-[#1E1E20] opacity-10 mb-8 max-w-7xl mx-auto" />
         
@@ -354,11 +403,18 @@ export default function Home() {
             <span>IG @cotacero_superficies</span>
           </div>
           <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center">
-             <span className="text-[#B06F4E]">WhatsApp: +54 9 221 000 0000</span>
+             <span className="text-[#B06F4E]">WhatsApp: +54 9 221 568 0778</span>
              <span>© {new Date().getFullYear()} Cota Cero</span>
           </div>
         </footer>
       </section>
+
+      {/* MOBILE STICKY CTA */}
+      <div className="md:hidden fixed bottom-0 left-0 w-full p-4 z-40 pointer-events-none">
+        <a href="#contacto" className="pointer-events-auto bg-[#B06F4E] text-[#1E1E20] w-full py-4 flex items-center justify-center text-[12px] font-bold uppercase tracking-widest shadow-lg">
+          Agendá tu diagnóstico
+        </a>
+      </div>
     </main>
   );
 }
