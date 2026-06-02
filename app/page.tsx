@@ -1,9 +1,9 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, MapPin, Ruler, Layers, ShieldCheck, Check } from 'lucide-react';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { ArrowRight, MapPin, Ruler, Layers, ShieldCheck, Check, Menu, X, Plus, Minus } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 // Images
 import heroImg from '../src/assets/images/hero_1780368898171.png';
@@ -25,14 +25,25 @@ const services = [
 ];
 
 const protocolSteps = [
-  { id: '01', title: 'Sustrato', desc: 'Medición hidrométrica, barreras de vapor y corrección de planimetría. La base invisible.' },
-  { id: '02', title: 'Materialidad', desc: 'Especificación técnica según uso, asoleamiento y acústica requerida por el ambiente.' },
-  { id: '03', title: 'Ejecución', desc: 'Instalación bajo norma, respetando juntas de dilatación y transiciones precisas.' },
-  { id: '04', title: 'Terminación', desc: 'Ajuste de zócalos, perfiles de terminación y limpieza de entrega final.' },
+  { id: '01', title: 'Relevamiento', desc: 'Humedad, niveles y sustrato.' },
+  { id: '02', title: 'Preparación', desc: 'Acondicionamos la base.' },
+  { id: '03', title: 'Aclimatación', desc: 'Descanso del material.' },
+  { id: '04', title: 'Instalación', desc: 'Certificación técnica.' },
+  { id: '05', title: 'Terminaciones', desc: 'Zócalos y transiciones.' },
+  { id: '06', title: 'Entrega', desc: 'Registro de obra final.' },
+];
+
+const faqs = [
+  { q: '¿En qué se diferencia el SPC del piso flotante?', a: 'El SPC (Stone Plastic Composite) es 100% resistente al agua y más rígido gracias a su núcleo de piedra, ideal para cocinas y baños. El flotante tradicional ofrece mayor calidez acústica pero es sensible a la humedad prolongada.' },
+  { q: '¿Qué significa aclimatar el piso?', a: 'Es el proceso técnico donde el material descansa en el ambiente donde será instalado (generalmente 48 a 72hs). Permite que las tablas se adapten a la temperatura y humedad del lugar, evitando futuras expansiones, contracciones o deformaciones.' },
+  { q: '¿Tengo que preparar mi contrapiso antes de que vengan?', a: 'Te recomendamos consultarlo con nosotros en la etapa de relevamiento. En Cota Cero realizamos diagnóstico de humedad y planimetría. Si el sustrato no está en condiciones, nosotros mismos nos encargamos de nivelarlo y prepararlo.' },
+  { q: '¿Instalan materiales que yo ya compré?', a: 'Sí. Nuestro foco es la "Cota Cero": la calidad de la instalación. Si ya contás con un material premium, nuestro equipo técnico lo instalará bajo nuestros estrictos protocolos para garantizar su máxima durabilidad.' }
 ];
 
 export default function Home() {
   const heroRef = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -44,18 +55,50 @@ export default function Home() {
       {/* HEADER / NAVIGATION */}
       <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-10 py-6 border-b border-[#3A3A3C] backdrop-blur-md bg-[#1E1E20]/90 text-[#ECE5D6]">
         <div className="flex items-center gap-4">
-          <div className="flex flex-col leading-none">
+          <div className="flex flex-col leading-none z-50">
             <span className="font-display text-2xl font-bold tracking-tighter">N<span className="text-[#B06F4E]">C</span></span>
             <div className="h-[1px] w-full bg-[#B06F4E] mt-1"></div>
           </div>
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase ml-4 hidden sm:inline-block">COTA CERO — City Bell</span>
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase ml-4 hidden sm:inline-block z-50">COTA CERO — City Bell</span>
         </div>
-        <div className="flex gap-8 items-center">
-          <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase hidden md:inline-block">Pisos · Revestimientos · Decks</span>
+        
+        {/* DESKTOP NAV */}
+        <div className="hidden md:flex gap-8 items-center">
+          <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
           <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-6 py-3 rounded-full text-[12px] font-bold uppercase tracking-wider hover:bg-[#C98A66] transition-colors">
             Agendá tu relevamiento
           </a>
         </div>
+
+        {/* MOBILE NAV TOGGLE */}
+        <button 
+          className="md:hidden z-50 p-2 -mr-2 text-[#ECE5D6]" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        {/* MOBILE MENU FULLSCREEN */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-0 left-0 w-full h-screen bg-[#1E1E20] flex flex-col items-center justify-center gap-12 z-40 text-center px-6"
+            >
+              <nav className="flex flex-col gap-8 items-center">
+                <a href="#manifiesto" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Concepto</a>
+                <a href="#protocolo" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Protocolo</a>
+                <a href="#superficies" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Superficies</a>
+                <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
+              </nav>
+              <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 rounded-full text-[12px] font-bold uppercase tracking-wider">
+                Agendá tu relevamiento
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* SECTION 1: HERO */}
@@ -169,7 +212,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 lg:gap-8">
           {protocolSteps.map((step) => (
              <div key={step.id} className="border-l border-[#ECE5D6]/20 pl-4 py-2 hover:border-[#B06F4E] transition-colors duration-300">
                <span className="block font-mono text-[#B06F4E] text-2xl font-bold mb-2">{step.id}</span>
@@ -177,6 +220,38 @@ export default function Home() {
                <span className="block text-xs font-medium leading-relaxed opacity-70">{step.desc}</span>
              </div>
           ))}
+        </div>
+      </section>
+
+      {/* SECTION VENTA COMUN VS COTA CERO */}
+      <section className="bg-[#ECE5D6] text-[#1E1E20] py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]">
+        <div className="max-w-5xl">
+          <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">La Diferencia</span>
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-12">Por qué Cota Cero</h2>
+          
+          <div className="space-y-6">
+            <div className="flex items-start gap-4 opacity-50 grayscale pt-6 border-t border-[#1E1E20]/10">
+              <div className="w-5 h-5 flex-shrink-0 border border-[#1E1E20] flex items-center justify-center text-[10px] mt-1">×</div>
+              <div>
+                <span className="block font-bold mb-1">Venta común libre</span>
+                <p className="text-sm">Te venden el material y queda en vos conseguir quién y cómo lo instalan.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 pt-6 border-t border-[#B06F4E]/30">
+              <div className="w-5 h-5 flex-shrink-0 bg-[#B06F4E] flex items-center justify-center text-[#ECE5D6] text-[10px] mt-1">✓</div>
+              <div>
+                <span className="block font-bold mb-1 text-[#B06F4E]">Diagnóstico Técnico Previo</span>
+                <p className="text-sm font-medium">Medición de humedad y planimetría antes de siquiera presupuestar.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 pt-6 border-t border-[#B06F4E]/30">
+              <div className="w-5 h-5 flex-shrink-0 bg-[#B06F4E] flex items-center justify-center text-[#ECE5D6] text-[10px] mt-1">✓</div>
+              <div>
+                <span className="block font-bold mb-1 text-[#B06F4E]">Certificación de Instalación</span>
+                <p className="text-sm font-medium">Instaladores bajo protocolo y registro auditable de cada etapa del proceso.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -210,6 +285,49 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SECTION FAQ (NEW) */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="faq">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Preguntas Frecuentes</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none">Lo que necesitás saber.</h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className="border border-[#3A3A3C] bg-[#1E1E20]/50 overflow-hidden transition-all duration-300"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-[#ECE5D6]/5 transition-colors"
+                >
+                  <span className="font-bold text-lg md:text-xl pr-8">{faq.q}</span>
+                  <span className="flex-shrink-0 text-[#B06F4E]">
+                    {openFaq === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                  </span>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="px-6 pb-6 text-[#ECE5D6]/80 text-sm md:text-base leading-relaxed border-t border-[#3A3A3C] mt-2 pt-4">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
