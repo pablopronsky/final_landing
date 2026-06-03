@@ -272,9 +272,9 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <ProofImage src="/obra/medicion-humedad.jpg" alt="Medición de humedad y planimetría en obra" label="[FOTO: Medición de humedad]" />
-            <ProofImage src="/obra/nivelacion-sustrato.jpg" alt="Nivelación y preparación de sustrato" label="[FOTO: Nivelación de sustrato]" />
-            <ProofImage src="/obra/cortes-zocalos.jpg" alt="Cortes milimétricos y terminación de zócalos" label="[FOTO: Cortes y zócalos]" />
+            <ProofImage src="/obra/medicion-humedad.png" alt="Medición de humedad y planimetría en obra" label="[FOTO: Medición de humedad]" />
+            <ProofImage src="/obra/nivelacion-sustrato.png" alt="Nivelación y preparación de sustrato" label="[FOTO: Nivelación de sustrato]" />
+            <ProofImage src="/obra/cortes-zocalos.png" alt="Cortes milimétricos y terminación de zócalos" label="[FOTO: Cortes y zócalos]" />
           </div>
         </div>
       </section>
