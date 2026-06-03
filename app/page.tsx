@@ -28,7 +28,7 @@ const ProofImage = ({ src, alt, label }: { src: string, alt: string, label: stri
   const [error, setError] = useState(false);
 
   return (
-    <div className="relative aspect-[4/3] bg-[#1E1E20] flex border border-[#3A3A3C] items-center justify-center p-6 text-center overflow-hidden group">
+    <div className="relative aspect-[4/3] bg-[#1F1F1F] flex border border-[#2B2D2F] items-center justify-center p-6 text-center overflow-hidden group">
       {!error && (
         <img 
           src={src} 
@@ -38,8 +38,30 @@ const ProofImage = ({ src, alt, label }: { src: string, alt: string, label: stri
           onError={() => setError(true)} 
         />
       )}
-      <span className="text-[#B06F4E]/60 font-mono text-sm uppercase tracking-widest relative z-0">{label}</span>
+      <span className="text-[#C38A5A]/60 font-mono text-sm uppercase tracking-widest relative z-0">{label}</span>
     </div>
+  );
+};
+
+interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  variant?: 'outline' | 'filled' | 'dark' | 'ghost';
+  children: React.ReactNode;
+}
+
+const ButtonCTA = ({ variant = 'filled', className = '', children, ...props }: ButtonProps) => {
+  const baseClasses = "font-display font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center transition-colors duration-300";
+  
+  const variants = {
+    filled: "bg-[#C38A5A] text-[#1F1F1F] hover:bg-[#F5F2ED] hover:text-[#1F1F1F]",
+    outline: "border border-[#C38A5A] text-[#C38A5A] hover:bg-[#C38A5A] hover:text-[#1F1F1F]",
+    dark: "bg-[#1F1F1F] text-[#F5F2ED] border border-[#1F1F1F] hover:bg-[#C38A5A] hover:border-[#C38A5A] hover:text-[#1F1F1F]",
+    ghost: "text-[#C38A5A] hover:text-[#F5F2ED]",
+  };
+
+  return (
+    <a className={`${baseClasses} ${variants[variant]} ${className}`} {...props}>
+      {children}
+    </a>
   );
 };
 
@@ -83,9 +105,9 @@ export default function Home() {
         {/* DESKTOP NAV */}
         <div className="hidden md:flex gap-8 items-center">
           <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
-          <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-6 py-3 text-[12px] font-bold uppercase tracking-wider hover:bg-[#C98A66] transition-colors">
-            Agendá tu diagnóstico
-          </a>
+          <ButtonCTA href="#contacto" variant="outline" className="px-6 py-3 text-[12px]">
+            AGENDÁ TU DIAGNÓSTICO
+          </ButtonCTA>
         </div>
 
         {/* MOBILE NAV TOGGLE */}
@@ -111,9 +133,9 @@ export default function Home() {
                 <a href="#superficies" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Superficies</a>
                 <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
               </nav>
-              <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 text-[12px] font-bold uppercase tracking-wider">
-                Agendá tu diagnóstico
-              </a>
+              <ButtonCTA href="#contacto" variant="outline" onClick={() => setIsMobileMenuOpen(false)} className="px-8 py-4 text-[12px]">
+                AGENDÁ TU DIAGNÓSTICO
+              </ButtonCTA>
             </motion.div>
           )}
         </AnimatePresence>
@@ -184,12 +206,12 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-6 mt-12 items-start sm:items-center"
           >
-            <a href="#contacto" className="bg-[#B06F4E] text-[#1E1E20] px-8 py-4 text-[12px] font-bold uppercase tracking-widest hover:bg-[#C98A66] transition-colors">
-              Agendá tu diagnóstico
-            </a>
-            <a href="#protocolo" className="flex items-center gap-2 text-[#ECE5D6] text-[12px] font-bold uppercase tracking-widest hover:text-[#B06F4E] transition-colors">
-              Conocé el protocolo <ArrowRight className="w-4 h-4" />
-            </a>
+            <ButtonCTA href="#contacto" variant="filled" className="px-10 py-5 text-[14px]">
+              AGENDÁ TU DIAGNÓSTICO
+            </ButtonCTA>
+            <ButtonCTA href="#protocolo" variant="ghost" className="gap-2 text-[12px]">
+              CONOCÉ EL PROTOCOLO <ArrowRight className="w-4 h-4" />
+            </ButtonCTA>
           </motion.div>
         </div>
       </section>
@@ -361,18 +383,21 @@ export default function Home() {
         <h3 className="font-display text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase leading-none tracking-tighter text-balance mb-6 max-w-4xl mx-auto">
           Antes de elegir el material, revisemos si tu obra está lista para recibirlo.
         </h3>
-        <p className="text-xl md:text-[24px] italic text-[#B06F4E] font-serif mb-12">
+        <p className="text-xl md:text-[24px] italic text-[#C38A5A] font-serif mb-12">
           Solicitá un diagnóstico técnico previo en obra, sin compromiso.
         </p>
 
-        <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-[#1E1E20] text-[#ECE5D6] px-8 md:px-10 py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-[#3A3A3C] border border-[#B06F4E] transition-all duration-300 shadow-[0_10px_30px_rgba(176,111,78,0.2)] mb-16">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#B06F4E" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Agendá tu diagnóstico
-        </a>
+        <ButtonCTA 
+          href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="dark" 
+          className="px-12 py-6 text-[14px] mb-16"
+        >
+          AGENDÁ TU DIAGNÓSTICO
+        </ButtonCTA>
 
-        <p className="text-sm md:text-base opacity-70 font-medium max-w-2xl px-6 mb-24 md:mb-32">
+        <p className="text-sm md:text-base opacity-70 font-medium max-w-2xl px-6 mb-24 md:mb-32 text-[#2B2D2F]">
           Trabajamos sobre obra de arquitectura, reformas integrales y residencias de alta gama. Tomamos un número limitado de obras por mes para sostener el protocolo.
         </p>
 
@@ -392,8 +417,29 @@ export default function Home() {
 
       {/* MOBILE STICKY CTA */}
       <div className="md:hidden fixed bottom-0 left-0 w-full p-4 z-40 pointer-events-none">
-        <a href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." target="_blank" rel="noopener noreferrer" className="pointer-events-auto bg-[#B06F4E] text-[#1E1E20] w-full py-4 flex items-center justify-center text-[12px] font-bold uppercase tracking-widest shadow-lg">
-          Agendá tu diagnóstico
+        <ButtonCTA 
+          href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="filled" 
+          className="pointer-events-auto w-full py-5 text-[14px] shadow-lg"
+        >
+          AGENDÁ TU DIAGNÓSTICO
+        </ButtonCTA>
+      </div>
+
+      {/* WHATSAPP FLOAT */}
+      <div className="fixed bottom-24 md:bottom-8 right-6 z-50">
+        <a 
+          href="https://wa.me/5492215680778?text=Hola,%20quiero%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20para%20mi%20obra.%20Estoy%20en%20[localidad],%20el%20trabajo%20ser%C3%ADa%20sobre%20[tipo%20de%20superficie]%20y%20la%20superficie%20aproximada%20es%20de%20[m2]." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 hover:bg-[#20bd5a] transition-all duration-300"
+          aria-label="Contactar por WhatsApp"
+        >
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
         </a>
       </div>
     </main>
