@@ -218,19 +218,22 @@ export default function Home() {
       </section>
 
       {/* TRUST BAR */}
-      <div className="bg-[#B06F4E] text-[#1E1E20] py-8 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          <div className="flex flex-col gap-2 border-l-2 border-[#1E1E20]/20 pl-4">
-            <h4 className="font-display font-bold uppercase tracking-tight text-lg">Diagnóstico Previo</h4>
-            <p className="text-sm font-medium opacity-90 leading-relaxed">Medimos humedad y niveles antes de presupuestar.</p>
+      <div className="bg-[#1F1F1F] py-10 md:py-12 px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3">
+          <div className="flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:pr-8">
+            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3">01</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2">DIAGNÓSTICO PREVIO</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed">Medimos humedad y niveles antes de presupuestar.</p>
           </div>
-          <div className="flex flex-col gap-2 border-l-2 border-[#1E1E20]/20 pl-4">
-            <h4 className="font-display font-bold uppercase tracking-tight text-lg">Supervisión Técnica</h4>
-            <p className="text-sm font-medium opacity-90 leading-relaxed">Instalación controlada sin dejar nada librado al azar.</p>
+          <div className="flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:px-8">
+            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3">02</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2">SUPERVISIÓN TÉCNICA</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed">Instalación controlada sin dejar nada librado al azar.</p>
           </div>
-          <div className="flex flex-col gap-2 border-l-2 border-[#1E1E20]/20 pl-4">
-            <h4 className="font-display font-bold uppercase tracking-tight text-lg">Registro Auditable</h4>
-            <p className="text-sm font-medium opacity-90 leading-relaxed">Documentación de cada etapa técnica hasta la entrega.</p>
+          <div className="flex flex-col md:pl-8">
+            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3">03</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2">REGISTRO AUDITABLE</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed">Documentación de cada etapa técnica hasta la entrega.</p>
           </div>
         </div>
       </div>
