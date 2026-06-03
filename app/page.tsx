@@ -38,7 +38,7 @@ const ProofImage = ({ src, alt, label }: { src: string, alt: string, label: stri
           onError={() => setError(true)} 
         />
       )}
-      <span className="text-[#C38A5A]/60 font-mono text-sm uppercase tracking-widest relative z-0">{label}</span>
+      <span className="text-[#C38A5A]/60 font-mono text-[16px] uppercase tracking-widest relative z-0">{label}</span>
     </div>
   );
 };
@@ -104,8 +104,8 @@ export default function Home() {
         
         {/* DESKTOP NAV */}
         <div className="hidden md:flex gap-8 items-center">
-          <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
-          <ButtonCTA href="#contacto" variant="outline" className="px-6 py-3 text-[12px]">
+          <span className="text-[13px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
+          <ButtonCTA href="#contacto" variant="outline" className="px-6 py-3 text-[14px]">
             PEDÍ TU DIAGNÓSTICO
           </ButtonCTA>
         </div>
@@ -128,12 +128,12 @@ export default function Home() {
               className="absolute top-0 left-0 w-full h-screen bg-[#1E1E20] flex flex-col items-center justify-center gap-12 z-40 text-center px-6"
             >
               <nav className="flex flex-col gap-8 items-center">
-                <a href="#manifiesto" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Concepto</a>
-                <a href="#protocolo" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Protocolo</a>
-                <a href="#superficies" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Superficies</a>
-                <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
+                <a href="#manifiesto" onClick={() => setIsMobileMenuOpen(false)} className="text-[26px] font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Concepto</a>
+                <a href="#protocolo" onClick={() => setIsMobileMenuOpen(false)} className="text-[26px] font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Protocolo</a>
+                <a href="#superficies" onClick={() => setIsMobileMenuOpen(false)} className="text-[26px] font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Superficies</a>
+                <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-[26px] font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
               </nav>
-              <ButtonCTA href="#contacto" variant="outline" onClick={() => setIsMobileMenuOpen(false)} className="px-8 py-4 text-[12px]">
+              <ButtonCTA href="#contacto" variant="outline" onClick={() => setIsMobileMenuOpen(false)} className="px-8 py-4 text-[14px]">
                 PEDÍ TU DIAGNÓSTICO
               </ButtonCTA>
             </motion.div>
@@ -160,7 +160,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="block text-[#C38A5A] text-[12px] font-display font-bold tracking-[0.4em] uppercase mb-6"
+            className="block text-[#C38A5A] text-[14px] font-display font-bold tracking-[0.4em] uppercase mb-6"
           >
             Superficies y Terminaciones · City Bell
           </motion.span>
@@ -169,7 +169,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-[64px] md:text-[80px] lg:text-[100px] leading-[0.85] font-bold uppercase mb-6 tracking-tighter text-balance"
+            className="font-display text-[66px] md:text-[82px] lg:text-[102px] leading-[0.85] font-bold uppercase mb-6 tracking-tighter text-balance"
           >
             Cada obra tiene un<br />
             punto de partida.
@@ -186,7 +186,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-[32px] md:text-[40px] italic text-[#ECE5D6] mb-8 font-serif leading-tight"
+            className="text-[34px] md:text-[42px] italic text-[#ECE5D6] mb-8 font-serif leading-tight"
             style={{ textShadow: '0 1px 6px rgba(0, 0, 0, 0.75)' }}
           >
             Nosotros lo llamamos <span className="text-[#C38A5A] font-bold">cota cero</span>.
@@ -196,7 +196,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-lg text-[#ECE5D6] opacity-100 max-w-lg font-display font-normal leading-relaxed drop-shadow-sm"
+            className="text-[20px] text-[#ECE5D6] opacity-100 max-w-lg font-display font-normal leading-relaxed drop-shadow-sm"
           >
             Un piso premium no se arruina por el material, sino por cómo se instala. No despachamos cajas: controlamos la instalación completa bajo un estricto protocolo de obra.
           </motion.p>
@@ -207,10 +207,10 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-6 mt-12 items-start sm:items-center"
           >
-            <ButtonCTA href="#contacto" variant="filled" className="px-10 py-5 text-[14px]">
+            <ButtonCTA href="#contacto" variant="filled" className="px-10 py-5 text-[16px]">
               PEDÍ TU DIAGNÓSTICO
             </ButtonCTA>
-            <ButtonCTA href="#protocolo" variant="ghost" className="gap-2 text-[12px]">
+            <ButtonCTA href="#protocolo" variant="ghost" className="gap-2 text-[14px]">
               CONOCÉ EL PROTOCOLO <ArrowRight className="w-4 h-4" />
             </ButtonCTA>
           </motion.div>
@@ -221,19 +221,19 @@ export default function Home() {
       <div className="bg-[#1F1F1F] py-10 md:py-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3">
           <div className="group flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:pr-8 cursor-default">
-            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">01</span>
-            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2 transition-transform duration-500 group-hover:translate-x-1">DIAGNÓSTICO PREVIO</h4>
-            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Medimos humedad y niveles antes de presupuestar.</p>
+            <span className="font-display text-[#C38A5A] text-[12px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">01</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[15px] mb-2 transition-transform duration-500 group-hover:translate-x-1">DIAGNÓSTICO PREVIO</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[15px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Medimos humedad y niveles antes de presupuestar.</p>
           </div>
           <div className="group flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:px-8 cursor-default">
-            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">02</span>
-            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2 transition-transform duration-500 group-hover:translate-x-1">SUPERVISIÓN TÉCNICA</h4>
-            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Instalación controlada sin dejar nada librado al azar.</p>
+            <span className="font-display text-[#C38A5A] text-[12px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">02</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[15px] mb-2 transition-transform duration-500 group-hover:translate-x-1">SUPERVISIÓN TÉCNICA</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[15px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Instalación controlada sin dejar nada librado al azar.</p>
           </div>
           <div className="group flex flex-col md:pl-8 cursor-default">
-            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">03</span>
-            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2 transition-transform duration-500 group-hover:translate-x-1">REGISTRO AUDITABLE</h4>
-            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Documentación de cada etapa técnica hasta la entrega.</p>
+            <span className="font-display text-[#C38A5A] text-[12px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">03</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[15px] mb-2 transition-transform duration-500 group-hover:translate-x-1">REGISTRO AUDITABLE</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[15px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Documentación de cada etapa técnica hasta la entrega.</p>
           </div>
         </div>
       </div>
@@ -242,15 +242,15 @@ export default function Home() {
       <section className="bg-[#ECE5D6] text-[#1E1E20] py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]" id="manifiesto">
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-12 gap-6">
           <div>
-            <span className="text-[10px] font-bold tracking-widest text-[#3A3A3C] uppercase">01 — El Concepto</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter mt-2 text-balance leading-none">
+            <span className="text-[12px] font-bold tracking-widest text-[#3A3A3C] uppercase">01 — El Concepto</span>
+            <h2 className="font-display text-[38px] md:text-[50px] lg:text-[74px] font-bold uppercase tracking-tighter mt-2 text-balance leading-none">
               El problema de un piso casi nunca empieza en el piso.
             </h2>
           </div>
           <div className="h-[1px] flex-1 mx-8 bg-[#1E1E20] opacity-20 mb-3 hidden lg:block"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-lg md:text-xl font-medium opacity-90 leading-relaxed max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-[20px] md:text-[22px] font-medium opacity-90 leading-relaxed max-w-5xl">
           <p>
             La durabilidad y estética de una superficie premium dependen en un 80% del estado del sustrato y el rigor de la instalación, no solo de la calidad del material. La industria se acostumbró a vender metros cuadrados.
           </p>
@@ -264,11 +264,11 @@ export default function Home() {
       <section className="bg-[#1E1E20] py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C]" id="protocolo">
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6">
           <div>
-            <span className="text-[10px] font-bold tracking-widest text-[#B06F4E] uppercase">02 — El Método</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter mt-2 leading-none">Protocolo de Obra</h2>
+            <span className="text-[12px] font-bold tracking-widest text-[#B06F4E] uppercase">02 — El Método</span>
+            <h2 className="font-display text-[38px] md:text-[50px] lg:text-[62px] font-bold uppercase tracking-tighter mt-2 leading-none">Protocolo de Obra</h2>
           </div>
           <div className="h-[1px] flex-1 mx-8 bg-[#ECE5D6] opacity-20 mb-3 hidden md:block"></div>
-          <p className="max-w-xs text-[10px] font-bold text-[#ECE5D6]/50 uppercase tracking-widest leading-relaxed mb-1">
+          <p className="max-w-xs text-[12px] font-bold text-[#ECE5D6]/50 uppercase tracking-widest leading-relaxed mb-1">
             Seis etapas. Cero atajos.
           </p>
         </div>
@@ -276,9 +276,9 @@ export default function Home() {
         <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 lg:gap-8">
           {protocolSteps.map((step) => (
              <div key={step.id} className="border-l border-[#ECE5D6]/20 pl-4 py-2 hover:border-[#B06F4E] transition-colors duration-300">
-               <span className="block font-mono text-[#B06F4E] text-2xl font-bold mb-2">{step.id}</span>
-               <span className="block text-[13px] font-bold uppercase mb-2 tracking-wider">{step.title}</span>
-               <span className="block text-xs font-medium leading-relaxed opacity-70">{step.desc}</span>
+               <span className="block font-mono text-[#B06F4E] text-[26px] font-bold mb-2">{step.id}</span>
+               <span className="block text-[15px] font-bold uppercase mb-2 tracking-wider">{step.title}</span>
+               <span className="block text-[14px] font-medium leading-relaxed opacity-70">{step.desc}</span>
              </div>
           ))}
         </div>
@@ -288,11 +288,11 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 xl:mb-20">
-             <span className="text-[#ECE5D6]/50 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">03 — Práctica</span>
-             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none mb-6">
+             <span className="text-[#ECE5D6]/50 text-[12px] font-bold tracking-[0.3em] uppercase mb-4 block">03 — Práctica</span>
+             <h2 className="font-display text-[38px] md:text-[50px] lg:text-[62px] font-bold uppercase tracking-tighter leading-none mb-6">
               Así trabajamos.<br />Mirá la diferencia.
              </h2>
-             <p className="text-lg md:text-xl text-[#ECE5D6] opacity-80 max-w-2xl font-medium leading-relaxed">
+             <p className="text-[20px] md:text-[22px] text-[#ECE5D6] opacity-80 max-w-2xl font-medium leading-relaxed">
               La cota cero se construye en la obra. Medición con higrómetro, corrección de niveles, cortes milimétricos y terminaciones exactas.
              </p>
           </div>
@@ -308,8 +308,8 @@ export default function Home() {
       {/* SECTION 5: SUPERFICIES Y TERMINACIONES (SERVICES) */}
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="superficies">
         <div className="mb-16 md:mb-24">
-           <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">04 — Soluciones</span>
-           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-none text-balance">
+           <span className="text-[#B06F4E] text-[12px] font-bold tracking-[0.3em] uppercase mb-4 block">04 — Soluciones</span>
+           <h2 className="font-display text-[50px] md:text-[62px] lg:text-[74px] font-bold uppercase tracking-tighter leading-none text-balance">
             Superficies de<br />Alta Gama
            </h2>
         </div>
@@ -327,9 +327,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#1E1E20]/80 group-hover:bg-[#1E1E20]/20 transition-colors duration-500" />
               
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <span className="block font-mono text-[#B06F4E] text-xs mb-2">0{index + 1}</span>
-                <h4 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tighter leading-none mb-3">{service.title}</h4>
-                <p className="text-[11px] font-bold opacity-70 uppercase tracking-widest leading-relaxed max-w-[90%]">
+                <span className="block font-mono text-[#B06F4E] text-[14px] mb-2">0{index + 1}</span>
+                <h4 className="font-display text-[26px] md:text-[32px] font-bold uppercase tracking-tighter leading-none mb-3">{service.title}</h4>
+                <p className="text-[13px] font-bold opacity-70 uppercase tracking-widest leading-relaxed max-w-[90%]">
                   {service.desc}
                 </p>
               </div>
@@ -342,8 +342,8 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 lg:px-24 border-b border-[#3A3A3C] bg-[#1E1E20]" id="faq">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#B06F4E] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">05 — Preguntas Frecuentes</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-none">Lo que necesitás saber.</h2>
+            <span className="text-[#B06F4E] text-[12px] font-bold tracking-[0.3em] uppercase mb-4 block">05 — Preguntas Frecuentes</span>
+            <h2 className="font-display text-[38px] md:text-[50px] lg:text-[62px] font-bold uppercase tracking-tighter leading-none">Lo que necesitás saber.</h2>
           </div>
 
           <div className="space-y-4">
@@ -356,7 +356,7 @@ export default function Home() {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-[#ECE5D6]/5 transition-colors"
                 >
-                  <span className="font-bold text-lg md:text-xl pr-8">{faq.q}</span>
+                  <span className="font-bold text-[20px] md:text-[22px] pr-8">{faq.q}</span>
                   <span className="flex-shrink-0 text-[#B06F4E]">
                     {openFaq === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                   </span>
@@ -369,7 +369,7 @@ export default function Home() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 text-[#ECE5D6]/80 text-sm md:text-base leading-relaxed border-t border-[#3A3A3C] mt-2 pt-4">
+                      <div className="px-6 pb-6 text-[#ECE5D6]/80 text-[16px] md:text-[18px] leading-relaxed border-t border-[#3A3A3C] mt-2 pt-4">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -383,11 +383,11 @@ export default function Home() {
 
       {/* SECTION 5: CONTACTO / CTA & FOOTER */}
       <section className="bg-[#ECE5D6] text-[#1E1E20] px-6 md:px-12 lg:px-24 py-24 md:py-32 flex flex-col items-center text-center relative" id="contacto">
-        <span className="text-[#3A3A3C] text-[10px] font-bold tracking-[0.3em] uppercase mb-6 block">06 — Contacto</span>
-        <h3 className="font-display text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase leading-none tracking-tighter text-balance mb-6 max-w-4xl mx-auto">
+        <span className="text-[#3A3A3C] text-[12px] font-bold tracking-[0.3em] uppercase mb-6 block">06 — Contacto</span>
+        <h3 className="font-display text-[42px] md:text-[62px] lg:text-[82px] font-bold uppercase leading-none tracking-tighter text-balance mb-6 max-w-4xl mx-auto">
           Antes de elegir el material, revisemos si tu obra está lista para recibirlo.
         </h3>
-        <p className="text-xl md:text-[24px] italic text-[#C38A5A] font-serif mb-12">
+        <p className="text-[22px] md:text-[26px] italic text-[#C38A5A] font-serif mb-12">
           Solicitá un diagnóstico técnico previo en obra, sin compromiso.
         </p>
 
@@ -396,18 +396,18 @@ export default function Home() {
           target="_blank" 
           rel="noopener noreferrer" 
           variant="dark" 
-          className="px-12 py-6 text-[14px] mb-16"
+          className="px-12 py-6 text-[16px] mb-16"
         >
           PEDÍ TU DIAGNÓSTICO
         </ButtonCTA>
 
-        <p className="text-sm md:text-base opacity-70 font-medium max-w-2xl px-6 mb-24 md:mb-32 text-[#2B2D2F]">
+        <p className="text-[16px] md:text-[18px] opacity-70 font-medium max-w-2xl px-6 mb-24 md:mb-32 text-[#2B2D2F]">
           Trabajamos sobre obra de arquitectura, reformas integrales y residencias de alta gama. Tomamos un número limitado de obras por mes para sostener el protocolo.
         </p>
 
         <div className="w-full h-[1px] bg-[#1E1E20] opacity-10 mb-8 max-w-7xl mx-auto" />
         
-        <footer className="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] md:text-[11px] tracking-widest font-bold uppercase opacity-80 gap-4">
+        <footer className="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] md:text-[13px] tracking-widest font-bold uppercase opacity-80 gap-4">
           <div className="flex flex-col md:flex-row gap-2 md:gap-10">
             <span>City Bell / Gonnet</span>
             <span>IG @cotacero_superficies</span>
@@ -426,7 +426,7 @@ export default function Home() {
           target="_blank" 
           rel="noopener noreferrer" 
           variant="filled" 
-          className="pointer-events-auto w-full py-5 text-[14px] shadow-lg"
+          className="pointer-events-auto w-full py-5 text-[16px] shadow-lg"
         >
           PEDÍ TU DIAGNÓSTICO
         </ButtonCTA>
