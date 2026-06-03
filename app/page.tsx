@@ -220,20 +220,20 @@ export default function Home() {
       {/* TRUST BAR */}
       <div className="bg-[#1F1F1F] py-10 md:py-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3">
-          <div className="flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:pr-8">
-            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3">01</span>
-            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2">DIAGNÓSTICO PREVIO</h4>
-            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed">Medimos humedad y niveles antes de presupuestar.</p>
+          <div className="group flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:pr-8 cursor-default">
+            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">01</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2 transition-transform duration-500 group-hover:translate-x-1">DIAGNÓSTICO PREVIO</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Medimos humedad y niveles antes de presupuestar.</p>
           </div>
-          <div className="flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:px-8">
-            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3">02</span>
-            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2">SUPERVISIÓN TÉCNICA</h4>
-            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed">Instalación controlada sin dejar nada librado al azar.</p>
+          <div className="group flex flex-col md:border-r border-[#C38A5A]/20 pb-8 md:pb-0 mb-8 md:mb-0 border-b md:border-b-0 md:px-8 cursor-default">
+            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">02</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2 transition-transform duration-500 group-hover:translate-x-1">SUPERVISIÓN TÉCNICA</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Instalación controlada sin dejar nada librado al azar.</p>
           </div>
-          <div className="flex flex-col md:pl-8">
-            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3">03</span>
-            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2">REGISTRO AUDITABLE</h4>
-            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed">Documentación de cada etapa técnica hasta la entrega.</p>
+          <div className="group flex flex-col md:pl-8 cursor-default">
+            <span className="font-display text-[#C38A5A] text-[10px] tracking-[0.2em] uppercase mb-3 transition-transform duration-500 group-hover:-translate-y-1">03</span>
+            <h4 className="font-display text-[#F5F2ED] font-bold uppercase tracking-[0.16em] text-[13px] mb-2 transition-transform duration-500 group-hover:translate-x-1">REGISTRO AUDITABLE</h4>
+            <p className="text-[#F5F2ED]/55 font-normal text-[13px] leading-relaxed transition-all duration-500 group-hover:translate-x-1 group-hover:text-[#F5F2ED]/80">Documentación de cada etapa técnica hasta la entrega.</p>
           </div>
         </div>
       </div>
