@@ -97,9 +97,9 @@ export default function Home() {
       {/* HEADER / NAVIGATION */}
       <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-10 py-6 border-b border-[#3A3A3C] backdrop-blur-md bg-[#1E1E20]/90 text-[#ECE5D6]">
         <div className="flex items-center gap-4">
-          <div className="flex flex-col z-50">
+          <a href="#hero" className="flex flex-col z-50 cursor-pointer">
             <Image src="/logo.svg" alt="Cota Cero" width={180} height={40} className="w-auto h-5 md:h-6" priority />
-          </div>
+          </a>
         </div>
         
         {/* DESKTOP NAV */}
