@@ -49,7 +49,7 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const ButtonCTA = ({ variant = 'filled', className = '', children, ...props }: ButtonProps) => {
-  const baseClasses = "font-display font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center transition-colors duration-300";
+  const baseClasses = "font-display font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center transition-colors duration-300 rounded-none";
   
   const variants = {
     filled: "bg-[#C38A5A] text-[#1F1F1F] hover:bg-[#F5F2ED] hover:text-[#1F1F1F]",
@@ -106,7 +106,7 @@ export default function Home() {
         <div className="hidden md:flex gap-8 items-center">
           <span className="text-[11px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
           <ButtonCTA href="#contacto" variant="outline" className="px-6 py-3 text-[12px]">
-            AGENDÁ TU DIAGNÓSTICO
+            PEDÍ TU DIAGNÓSTICO
           </ButtonCTA>
         </div>
 
@@ -134,7 +134,7 @@ export default function Home() {
                 <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold uppercase tracking-widest text-[#ECE5D6] hover:text-[#B06F4E]">Preguntas Frecuentes</a>
               </nav>
               <ButtonCTA href="#contacto" variant="outline" onClick={() => setIsMobileMenuOpen(false)} className="px-8 py-4 text-[12px]">
-                AGENDÁ TU DIAGNÓSTICO
+                PEDÍ TU DIAGNÓSTICO
               </ButtonCTA>
             </motion.div>
           )}
@@ -160,7 +160,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="block text-[#B06F4E] text-[12px] font-bold tracking-[0.4em] uppercase mb-6"
+            className="block text-[#C38A5A] text-[12px] font-display font-bold tracking-[0.4em] uppercase mb-6"
           >
             Superficies y Terminaciones · City Bell
           </motion.span>
@@ -179,23 +179,24 @@ export default function Home() {
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="h-[2px] w-48 bg-[#B06F4E] mb-6 origin-left"
+            className="h-[2px] w-48 bg-[#C38A5A] mb-6 origin-left"
           />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-[32px] md:text-[40px] italic text-[#ECE5D6] mb-8 font-serif leading-tight drop-shadow-md"
+            className="text-[32px] md:text-[40px] italic text-[#ECE5D6] mb-8 font-serif leading-tight"
+            style={{ textShadow: '0 1px 6px rgba(0, 0, 0, 0.75)' }}
           >
-            Nosotros lo llamamos <span className="text-[#B06F4E] font-bold">cota cero</span>.
+            Nosotros lo llamamos <span className="text-[#C38A5A] font-bold">cota cero</span>.
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-lg text-[#ECE5D6] opacity-100 max-w-lg leading-relaxed font-medium drop-shadow-sm"
+            className="text-lg text-[#ECE5D6] opacity-100 max-w-lg font-display font-normal leading-relaxed drop-shadow-sm"
           >
             Un piso premium no se arruina por el material, sino por cómo se instala. No despachamos cajas: controlamos la instalación completa bajo un estricto protocolo de obra.
           </motion.p>
@@ -207,7 +208,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 mt-12 items-start sm:items-center"
           >
             <ButtonCTA href="#contacto" variant="filled" className="px-10 py-5 text-[14px]">
-              AGENDÁ TU DIAGNÓSTICO
+              PEDÍ TU DIAGNÓSTICO
             </ButtonCTA>
             <ButtonCTA href="#protocolo" variant="ghost" className="gap-2 text-[12px]">
               CONOCÉ EL PROTOCOLO <ArrowRight className="w-4 h-4" />
@@ -394,7 +395,7 @@ export default function Home() {
           variant="dark" 
           className="px-12 py-6 text-[14px] mb-16"
         >
-          AGENDÁ TU DIAGNÓSTICO
+          PEDÍ TU DIAGNÓSTICO
         </ButtonCTA>
 
         <p className="text-sm md:text-base opacity-70 font-medium max-w-2xl px-6 mb-24 md:mb-32 text-[#2B2D2F]">
@@ -424,7 +425,7 @@ export default function Home() {
           variant="filled" 
           className="pointer-events-auto w-full py-5 text-[14px] shadow-lg"
         >
-          AGENDÁ TU DIAGNÓSTICO
+          PEDÍ TU DIAGNÓSTICO
         </ButtonCTA>
       </div>
 
