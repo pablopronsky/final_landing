@@ -245,7 +245,7 @@ export default function Home() {
           <div>
             <span className="text-[12px] font-bold tracking-widest text-[#3A3A3C] uppercase">01 — El Concepto</span>
             <h2 className="font-display text-[38px] md:text-[50px] lg:text-[74px] font-bold uppercase tracking-tighter mt-2 text-balance leading-none">
-              El problema de un piso casi nunca empieza en el piso.
+              La mayoría de las fallas no aparecen porque el material sea malo.
             </h2>
           </div>
           <div className="h-[1px] flex-1 mx-8 bg-[#1E1E20] opacity-20 mb-3 hidden lg:block"></div>
@@ -253,10 +253,10 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-[20px] md:text-[22px] font-medium opacity-90 leading-relaxed max-w-5xl">
           <p>
-            La durabilidad y estética de una superficie premium dependen en un 80% del estado del sustrato y el rigor de la instalación, no solo de la calidad del material. La industria se acostumbró a vender metros cuadrados.
+            Aparecen porque la base no fue evaluada, preparada o ejecutada correctamente. Por eso nuestro trabajo empieza antes de instalar.
           </p>
           <p>
-            Nosotros cambiamos el paradigma: medimos, acondicionamos e instalamos. En arquitectura, la <span className="font-bold text-[#B06F4E]">cota cero</span> es el nivel de referencia desde el cual se mide todo el proyecto. Es la fundación visible que sostiene el resto de tu obra.
+            Revisamos las condiciones de la obra, corregimos lo que haga falta y ejecutamos cada etapa bajo un protocolo definido. La <span className="font-bold text-[#B06F4E]">cota cero</span> es el punto de referencia desde el que se construye todo lo demás. Esa idea también define nuestra forma de trabajar.
           </p>
         </div>
       </section>
@@ -269,8 +269,10 @@ export default function Home() {
             <h2 className="font-display text-[38px] md:text-[50px] lg:text-[62px] font-bold uppercase tracking-tighter mt-2 leading-none">Protocolo de Obra</h2>
           </div>
           <div className="h-[1px] flex-1 mx-8 bg-[#ECE5D6] opacity-20 mb-3 hidden md:block"></div>
-          <p className="max-w-xs text-[12px] font-bold text-[#ECE5D6]/50 uppercase tracking-widest leading-relaxed mb-1">
-            Seis etapas. Cero atajos.
+          <p className="max-w-sm text-[12px] md:text-right font-bold text-[#ECE5D6]/50 uppercase tracking-widest leading-relaxed mb-1">
+            Antes de instalar, medimos.<br />
+            Antes de avanzar, corregimos.<br />
+            Antes de entregar, verificamos.
           </p>
         </div>
 
