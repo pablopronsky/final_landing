@@ -198,7 +198,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-[20px] text-[#ECE5D6] opacity-100 max-w-lg font-display font-normal leading-relaxed drop-shadow-sm"
           >
-            Un piso premium no se arruina por el material, sino por cómo se instala. No despachamos cajas: controlamos la instalación completa bajo un estricto protocolo de obra.
+            El material no corrige una mala obra. Revisamos la base, definimos el sistema correcto y controlamos la ejecución hasta la entrega final.
           </motion.p>
 
           <motion.div
@@ -210,9 +210,10 @@ export default function Home() {
             <ButtonCTA href="#contacto" variant="filled" className="px-10 py-5 text-[16px]">
               PEDÍ TU DIAGNÓSTICO
             </ButtonCTA>
-            <ButtonCTA href="#protocolo" variant="ghost" className="gap-2 text-[14px]">
-              CONOCÉ EL PROTOCOLO <ArrowRight className="w-4 h-4" />
-            </ButtonCTA>
+            <a href="#protocolo" className="group flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.15em] text-[#ECE5D6] hover:text-[#C38A5A] transition-colors mt-2 sm:mt-0 sm:ml-4">
+              <span className="border-b border-transparent group-hover:border-[#C38A5A] transition-colors pb-0.5">CONOCÉ EL PROTOCOLO</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </motion.div>
         </div>
       </section>
