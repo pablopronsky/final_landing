@@ -313,7 +313,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.78 }}
-              className="text-[20px] md:text-[22px] text-[#ECE5D6]/80 max-w-lg font-display font-normal leading-relaxed"
+              className="text-[18px] md:text-[22px] text-[#ECE5D6]/80 max-w-lg font-display font-normal leading-relaxed"
             >
               El material no corrige una mala obra. Revisamos la base, definimos el sistema correcto y controlamos la ejecución hasta la entrega final.
             </motion.p>
