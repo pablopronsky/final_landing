@@ -7,6 +7,11 @@
   --color-copper: #B06F4E;
   --color-copper-light: #C98A66;
 
+  --color-surface-0: #19191B;
+  --color-surface-1: #1E1E20;
+  --color-surface-2: #242428;
+  --color-surface-3: #2B2B30;
+
   --font-display: var(--font-barlow-condensed), sans-serif;
   --font-serif: var(--font-cormorant), serif;
   --font-sans: var(--font-barlow), sans-serif;
@@ -19,11 +24,88 @@
   }
   body {
     @apply font-sans antialiased bg-graphite-dark text-bone;
+    line-height: 1.6;
+  }
+
+  #hero,
+  #manifiesto,
+  #protocolo,
+  #practica,
+  #superficies,
+  #faq,
+  #contacto {
+    scroll-margin-top: 96px;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .measure {
+    max-width: 62ch;
+  }
+
+  /* Film-grain overlay for atmosphere on dark sections */
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  .grain-overlay-light {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* Soft warm copper glow / vignette for dark hero atmosphere */
+  .vignette-copper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 60% at 18% 8%, rgba(176, 111, 78, 0.16), transparent 60%),
+      radial-gradient(ellipse 80% 70% at 100% 100%, rgba(0, 0, 0, 0.55), transparent 60%);
+  }
+
+  /* Faint architectural grid — "blueprint paper" texture for light sections */
+  .blueprint-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image:
+      linear-gradient(to right, var(--color-graphite-dark) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-graphite-dark) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .text-fluid-hero {
+    font-size: clamp(2.75rem, 4vw + 1.5rem, 6.4rem);
+  }
+
+  .text-fluid-h2 {
+    font-size: clamp(2.25rem, 3vw + 1.25rem, 4.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
