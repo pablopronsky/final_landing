@@ -188,20 +188,16 @@ export default function Home() {
   });
   const protocolFill = useTransform(protocolProgress, [0, 1], ['0%', '100%']);
 
-  // Mobile sticky CTA — hide while actively scrolling down (it collides with
-  // section headlines), reveal again when the user scrolls up or pauses.
-  const { scrollY } = useScroll();
+  // Mobile sticky CTA — a fixed bottom bar always collides with whatever
+  // scrolls underneath it (cards, headlines, etc.), no matter how fast the
+  // scroll is. So instead of trying to time its visibility against scroll
+  // speed, we only show it over the Hero — where there's empty space for it —
+  // and hide it for the rest of the page. Further down, the page already
+  // repeats the "Pedí tu diagnóstico" CTA inline plus the floating WhatsApp
+  // button, so contact remains one tap away without ever overlapping content.
   const [isMobileCtaVisible, setIsMobileCtaVisible] = useState(true);
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    const previous = scrollY.getPrevious() ?? latest;
-    const delta = latest - previous;
-    if (latest < 80) {
-      setIsMobileCtaVisible(true);
-    } else if (delta > 4) {
-      setIsMobileCtaVisible(false);
-    } else if (delta < -4) {
-      setIsMobileCtaVisible(true);
-    }
+  useMotionValueEvent(heroProgress, 'change', (latest) => {
+    setIsMobileCtaVisible(latest < 0.85);
   });
 
   return (
@@ -209,7 +205,7 @@ export default function Home() {
       <ScrollProgressBar />
 
       {/* HEADER / NAVIGATION */}
-      <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-10 py-6 border-b border-[#3A3A3C] backdrop-blur-md bg-[#1E1E20]/90 text-[#ECE5D6]">
+      <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-10 py-6 border-b border-[#3A3A3C] backdrop-blur-md bg-[#1E1E20]/95 text-[#ECE5D6] [transform:translateZ(0)] [-webkit-transform:translateZ(0)] will-change-transform isolate">
         <div className="flex items-center gap-4">
           <a href="#hero" className="flex flex-col z-50 cursor-pointer">
             <Image src="/logo.svg" alt="Cota Cero" width={180} height={40} className="w-auto h-5 md:h-6" priority />
