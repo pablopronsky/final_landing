@@ -292,30 +292,28 @@ export default function Home() {
             ))}
           </h1>
 
-          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 items-start max-w-4xl">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                transition={{ duration: 0.7, delay: 0.6 }}
-                className="h-px w-40 bg-[#C38A5A] mb-6 origin-left"
-              />
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.68 }}
-                className="text-[30px] md:text-[38px] italic text-[#ECE5D6] mb-6 font-serif leading-tight"
-                style={{ textShadow: '0 1px 6px rgba(0, 0, 0, 0.75)' }}
-              >
-                Nosotros lo llamamos <span className="text-[#C38A5A] font-bold">cota cero</span>.
-              </motion.p>
-            </div>
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="h-px w-40 bg-[#C38A5A] mb-6 origin-left"
+            />
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.68 }}
+              className="text-[32px] md:text-[40px] italic text-[#ECE5D6] mb-5 font-serif leading-tight"
+              style={{ textShadow: '0 1px 6px rgba(0, 0, 0, 0.75)' }}
+            >
+              Nosotros lo llamamos <span className="text-[#C38A5A] font-bold">cota cero</span>.
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.78 }}
-              className="text-[18px] md:text-[19px] text-[#ECE5D6]/85 max-w-md font-display font-normal leading-relaxed md:pt-10"
+              className="text-[20px] md:text-[22px] text-[#ECE5D6]/80 max-w-lg font-display font-normal leading-relaxed"
             >
               El material no corrige una mala obra. Revisamos la base, definimos el sistema correcto y controlamos la ejecución hasta la entrega final.
             </motion.p>
