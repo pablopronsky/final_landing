@@ -202,7 +202,9 @@ export default function Home() {
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex gap-8 items-center">
-          <span className="text-[13px] font-bold tracking-[0.2em] opacity-60 uppercase">Pisos · Revestimientos · Decks</span>
+          <span className="font-mono text-[12px] tracking-[0.25em] uppercase text-[#ECE5D6]/55">
+            Pisos <span className="text-[#C38A5A]">·</span> Revestimientos <span className="text-[#C38A5A]">·</span> Decks
+          </span>
           <ButtonCTA href="#contacto" variant="outline" className="px-6 py-3 text-[14px]">
             PEDÍ TU DIAGNÓSTICO
           </ButtonCTA>
@@ -257,11 +259,11 @@ export default function Home() {
         <div className="vignette-copper z-[1]" />
         <div className="grain-overlay z-[1]" />
 
-        {/* background datum line — large, faint, architectural */}
-        <div className="absolute inset-x-0 top-[34%] z-[1] flex items-center px-6 md:px-12 lg:px-24 opacity-50 pointer-events-none">
-          <span className="font-mono text-[11px] md:text-[12px] tracking-[0.35em] uppercase text-[#C38A5A]">COTA 0.00</span>
-          <motion.span style={{ width: heroLineWidth }} className="h-px bg-gradient-to-r from-[#C38A5A] to-transparent ml-4 origin-left" />
-          <span className="hidden md:block font-mono text-[11px] tracking-[0.35em] uppercase text-[#ECE5D6]/30 ml-4">REFERENCIA · DATUM · PUNTO DE PARTIDA</span>
+        {/* background datum line — confined to the right (photo) half so it never crosses the headline */}
+        <div className="absolute right-0 top-[40%] z-[1] hidden lg:flex w-[44%] justify-end items-center pr-12 xl:pr-20 opacity-40 pointer-events-none">
+          <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-[#ECE5D6]/35 mr-4 whitespace-nowrap">REFERENCIA · DATUM</span>
+          <motion.span style={{ width: heroLineWidth }} className="h-px bg-gradient-to-l from-[#C38A5A] to-transparent origin-right" />
+          <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-[#C38A5A] ml-4 whitespace-nowrap">COTA 0.00</span>
         </div>
 
         <div className="relative z-10 p-6 md:p-12 lg:p-24 max-w-7xl w-full">
@@ -390,22 +392,20 @@ export default function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative flex flex-col md:flex-row justify-between md:items-end mb-14 gap-6"
+          className="relative grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-8 mb-16 lg:mb-20"
         >
-          <div>
+          <div className="lg:col-span-8 xl:col-span-7">
             <Eyebrow index="01" label="El Concepto" tone="muted" />
             <motion.h2 variants={fadeUp} transition={{ duration: 0.7 }} className="font-display text-fluid-h2 font-bold uppercase tracking-tighter mt-2 text-balance leading-[0.95]">
               La mayoría de las fallas no aparecen porque el material sea malo.
             </motion.h2>
           </div>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformOrigin: 'left' }}
-            className="h-px flex-1 mx-8 bg-[#1E1E20]/25 mb-3 hidden lg:block"
-          />
+          <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="lg:col-span-4 xl:col-span-5 flex items-start lg:items-end lg:justify-end">
+            <div className="lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-[#B06F4E]/40 pl-5 lg:pl-0 lg:pr-5 py-1">
+              <span className="block font-mono text-[11px] tracking-[0.3em] uppercase text-[#B06F4E] mb-1">§ 01 / 06</span>
+              <span className="block font-mono text-[11px] tracking-[0.3em] uppercase text-[#1E1E20]/40">Diagnóstico · Base · Protocolo</span>
+            </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -413,7 +413,7 @@ export default function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 max-w-5xl"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24 max-w-6xl"
         >
           <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="text-[19px] md:text-[21px] font-medium opacity-90 leading-relaxed measure">
             Aparecen porque la base no fue evaluada, preparada o ejecutada correctamente. Por eso nuestro trabajo empieza antes de instalar.
