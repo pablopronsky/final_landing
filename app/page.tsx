@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'motion/react';
+import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence } from 'motion/react';
 import { ArrowRight, ArrowUpRight, Droplets, Ruler, ScissorsLineDashed, Menu, X, Plus, Minus } from 'lucide-react';
 import { useRef, useState } from 'react';
 
@@ -187,6 +187,22 @@ export default function Home() {
     offset: ['start 70%', 'end 60%'],
   });
   const protocolFill = useTransform(protocolProgress, [0, 1], ['0%', '100%']);
+
+  // Mobile sticky CTA — hide while actively scrolling down (it collides with
+  // section headlines), reveal again when the user scrolls up or pauses.
+  const { scrollY } = useScroll();
+  const [isMobileCtaVisible, setIsMobileCtaVisible] = useState(true);
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious() ?? latest;
+    const delta = latest - previous;
+    if (latest < 80) {
+      setIsMobileCtaVisible(true);
+    } else if (delta > 4) {
+      setIsMobileCtaVisible(false);
+    } else if (delta < -4) {
+      setIsMobileCtaVisible(true);
+    }
+  });
 
   return (
     <main className="min-h-screen bg-[#1E1E20] text-[#ECE5D6] font-sans selection:bg-[#B06F4E] selection:text-white">
@@ -728,19 +744,24 @@ export default function Home() {
         </span>
       </section>
 
-      {/* MOBILE STICKY CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full p-4 z-40 pointer-events-none">
+      {/* MOBILE STICKY CTA — slides away while scrolling down so it never collides with section content, returns on scroll-up / pause */}
+      <motion.div
+        initial={false}
+        animate={{ y: isMobileCtaVisible ? '0%' : '120%', opacity: isMobileCtaVisible ? 1 : 0 }}
+        transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+        className="md:hidden fixed bottom-0 left-0 w-full p-4 z-40 pointer-events-none"
+      >
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#1E1E20] to-transparent -z-10" />
         <ButtonCTA
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           variant="filled"
-          className="pointer-events-auto w-full py-5 text-[16px] shadow-lg"
+          className={`w-full py-5 text-[16px] shadow-lg ${isMobileCtaVisible ? 'pointer-events-auto' : 'pointer-events-none'}`}
         >
           PEDÍ TU DIAGNÓSTICO
         </ButtonCTA>
-      </div>
+      </motion.div>
 
       {/* WHATSAPP FLOAT */}
       <div className="fixed bottom-24 md:bottom-8 right-6 z-50">
