@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-graphite-dark: #1E1E20;
-  --color-graphite-medium: #3A3A3C;
-  --color-bone: #ECE5D6;
-  --color-copper: #B06F4E;
-  --color-copper-light: #C98A66;
+  /* Canónicos — brand book */
+  --color-grafito: #2B2D2F;
+  --color-negro: #1F1F1F;
+  --color-cobre: #C38A5A;
+  --color-hueso: #F5F2ED;
+  --color-piedra: #B8AEA3;
 
-  --color-surface-0: #19191B;
-  --color-surface-1: #1E1E20;
-  --color-surface-2: #242428;
-  --color-surface-3: #2B2B30;
+  /* Derivados de superficie (oscurecidos del grafito, extensión web) */
+  --color-surface-0: #1A1B1D;
+  --color-surface-1: #1F2022;
+  --color-surface-2: #26282A;
+
+  /* Verde de marca de WhatsApp — no forma parte de la paleta Cota Cero */
+  --color-whatsapp: #25D366;
 
   --font-display: var(--font-barlow-condensed), sans-serif;
   --font-serif: var(--font-cormorant), serif;
-  --font-sans: var(--font-barlow), sans-serif;
-  --font-mono: var(--font-ibm-plex), monospace;
+  --font-sans: var(--font-ibm-plex-sans), sans-serif;
+  --font-mono: var(--font-courier-prime), monospace;
 }
 
 @layer base {
@@ -23,7 +27,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans antialiased bg-graphite-dark text-bone;
+    @apply font-sans antialiased bg-surface-1 text-hueso;
     line-height: 1.6;
   }
 
@@ -74,7 +78,7 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 70% 60% at 18% 8%, rgba(176, 111, 78, 0.16), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 18% 8%, rgba(195, 138, 90, 0.16), transparent 60%),
       radial-gradient(ellipse 80% 70% at 100% 100%, rgba(0, 0, 0, 0.55), transparent 60%);
   }
 
@@ -85,8 +89,8 @@
     pointer-events: none;
     opacity: 0.05;
     background-image:
-      linear-gradient(to right, var(--color-graphite-dark) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--color-graphite-dark) 1px, transparent 1px);
+      linear-gradient(to right, var(--color-negro) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-negro) 1px, transparent 1px);
     background-size: 64px 64px;
   }
 

@@ -1,20 +1,61 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Cota Cero — Landing
 
-# Run and deploy your AI Studio app
+Landing page de Cota Cero (pisos, revestimientos y terminaciones — City Bell, Gonnet y La Plata).
 
-This contains everything you need to run your app locally.
+## Stack
 
-View your app in AI Studio: https://ai.studio/apps/c8f4f5cd-e63a-4a57-9b9e-68cb11c90640
+- [Next.js 15](https://nextjs.org/) (App Router, React 19)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [motion](https://motion.dev/) para animaciones
+- [lucide-react](https://lucide.dev/) para íconos
 
-## Run Locally
+## Desarrollo local
 
-**Prerequisites:**  Node.js
+**Requisitos:** Node.js 20+
 
+```bash
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+La app queda disponible en `http://localhost:3000`.
+
+## Build de producción
+
+```bash
+npm run build
+npm run start
+```
+
+## Estructura de carpetas
+
+```
+app/
+  layout.tsx        # fonts, metadata, JSON-LD, GA4
+  page.tsx          # compone las secciones del landing
+  globals.css       # tokens de diseño (paleta, tipografías, utilidades)
+  sitemap.ts
+  robots.ts
+components/
+  ui/                # piezas reutilizables (botones, eyebrows, líneas datum, etc.)
+  sections/          # secciones de la landing (Header, Hero, Protocolo, etc.)
+content/
+  site.ts            # todo el copy del sitio (servicios, protocolo, FAQs, etc.)
+lib/
+  config.ts          # constantes del sitio (WhatsApp, Instagram, GA4)
+  analytics.ts       # tracking de eventos (click_whatsapp)
+  utils.ts
+public/
+  obra/              # fotos de obra
+  images/            # imágenes de servicios y hero
+```
+
+## Variables de entorno
+
+| Variable | Descripción |
+| --- | --- |
+| `NEXT_PUBLIC_GA4_ID` | ID de Google Analytics 4 (formato `G-XXXXXXXXXX`). Si no está definida, GA4 no se carga. |
+
+## Configuración del sitio
+
+Los datos de contacto (WhatsApp, Instagram) viven en [`lib/config.ts`](lib/config.ts) y están marcados con `// EDITAR` donde falta verificar el dato real antes de salir a producción.

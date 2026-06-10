@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Cormorant_Garamond, Barlow, IBM_Plex_Mono } from 'next/font/google';
+import { Barlow_Condensed, Cormorant_Garamond, IBM_Plex_Sans, Courier_Prime } from 'next/font/google';
+import { MotionConfig } from 'motion/react';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { SITE } from '@/lib/config';
 import './globals.css';
 
 const barlowCondensed = Barlow_Condensed({
@@ -15,27 +18,49 @@ const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
 });
 
-const barlow = Barlow({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   weight: ['400', '500'],
-  variable: '--font-barlow',
+  variable: '--font-ibm-plex-sans',
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const courierPrime = Courier_Prime({
   subsets: ['latin'],
-  weight: ['500'],
-  variable: '--font-ibm-plex',
+  weight: ['400', '700'],
+  variable: '--font-courier-prime',
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.siteUrl),
   title: 'Cota Cero — Pisos, Revestimientos y Terminaciones | City Bell · La Plata',
   description: 'Pisos vinílicos, flotantes, madera, decks y revestimientos con instalación bajo protocolo. No vendemos pisos: controlamos cómo se instalan, del sustrato a la última terminación. City Bell, Gonnet y La Plata.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Cota Cero — Pisos, Revestimientos y Terminaciones',
     description: 'Pisos vinílicos, flotantes, madera, decks y revestimientos con instalación bajo protocolo. No vendemos pisos: controlamos cómo se instalan.',
+    url: SITE.siteUrl,
     locale: 'es_AR',
     type: 'website',
   },
+};
+
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Cota Cero',
+  image: `${SITE.siteUrl}/images/hero.webp`,
+  url: SITE.siteUrl,
+  telephone: `+${SITE.whatsappNumber}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'City Bell',
+    addressRegion: 'Buenos Aires',
+    addressCountry: 'AR',
+  },
+  areaServed: ['City Bell', 'Gonnet', 'La Plata'],
+  priceRange: '$$',
 };
 
 export default function RootLayout({
@@ -44,9 +69,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${barlowCondensed.variable} ${cormorant.variable} ${barlow.variable} ${ibmPlexMono.variable}`}>
-      <body className="bg-[#1E1E20] text-[#ECE5D6] selection:bg-[#B06F4E] selection:text-white" suppressHydrationWarning>
-        {children}
+    <html lang="es" className={`${barlowCondensed.variable} ${cormorant.variable} ${ibmPlexSans.variable} ${courierPrime.variable}`}>
+      <body className="selection:bg-cobre selection:text-negro" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
+        {SITE.ga4Id && <GoogleAnalytics gaId={SITE.ga4Id} />}
       </body>
     </html>
   );
