@@ -30,7 +30,7 @@ export const Protocolo = () => {
             {PROTOCOLO.heading}
           </motion.h2>
         </div>
-        <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="max-w-sm text-[12px] md:text-right font-bold text-hueso/45 uppercase tracking-widest leading-relaxed mb-1">
+        <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="max-w-sm text-[13px] md:text-right font-bold text-hueso/55 uppercase tracking-widest leading-relaxed mb-1">
           {PROTOCOLO.introLines.map((line, i) => (
             <span key={i}>
               {line}
@@ -71,7 +71,7 @@ export const Protocolo = () => {
                   </span>
                   <span className="block font-mono text-cobre text-[34px] md:text-[40px] font-semibold leading-none mb-2 tracking-tight transition-transform duration-400 group-hover:-translate-y-1">{step.id}</span>
                   <h4 className="block font-display text-[19px] font-bold uppercase mb-2 tracking-wide">{step.title}</h4>
-                  <p className="block text-[14.5px] leading-relaxed text-hueso/65 max-w-[26ch]">{step.desc}</p>
+                  <p className="block text-[16px] md:text-[17px] leading-[1.7] text-hueso/75 max-w-[30ch]">{step.desc}</p>
                 </div>
               </motion.div>
             );

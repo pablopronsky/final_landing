@@ -63,7 +63,7 @@ export const Faq = () => {
                       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-8 px-2 md:px-6 pl-[52px] md:pl-[60px] text-hueso/70 text-[16px] md:text-[18px] leading-relaxed measure">
+                      <div className="pb-8 px-2 md:px-6 pl-[52px] md:pl-[60px] text-hueso/80 text-[17px] md:text-[19px] leading-[1.75] measure">
                         {faq.a}
                       </div>
                     </motion.div>
