@@ -18,7 +18,7 @@ const variantClasses = {
 };
 
 export const ButtonCTA = ({ variant = 'filled', location, className = '', children, onClick, ...props }: ButtonProps) => {
-  const baseClasses = 'group/btn relative font-display font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-3 transition-colors duration-300 rounded-none overflow-hidden';
+  const baseClasses = 'group/btn relative font-display font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-3 transition-colors duration-300 rounded-[3px] overflow-hidden';
 
   const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
     if (location && typeof props.href === 'string' && props.href.includes('wa.me')) {

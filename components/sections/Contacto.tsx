@@ -38,7 +38,7 @@ export const Contacto = () => (
 
       {/* Ficha técnica — qué incluye el diagnóstico. Borde hairline, microcuadrado
           cobre como marca de ítem (sin íconos ni color de relleno). */}
-      <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="w-full max-w-sm border border-negro/15 px-7 py-6 mb-12 text-left">
+      <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="w-full max-w-sm rounded-[3px] border border-negro/15 px-7 py-6 mb-12 text-left">
         <p className="font-display text-[12px] font-bold uppercase tracking-[0.25em] text-grafito mb-4">
           {CONTACTO.fichaTitle}
         </p>

@@ -19,7 +19,7 @@ export const ProofImage = ({
   const [error, setError] = useState(false);
 
   return (
-    <div className={`group relative bg-surface-2 border border-grafito overflow-hidden ${className}`}>
+    <div className={`group relative bg-surface-2 rounded-[3px] border border-grafito overflow-hidden ${className}`}>
       {!error && (
         <Image
           src={src}

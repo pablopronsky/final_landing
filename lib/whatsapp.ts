@@ -1,6 +1,6 @@
 // Helper único para armar deep-links de WhatsApp con texto real y URL-encodeado.
 // Número operativo de la marca.
-export const WHATSAPP_PHONE = '5492215680778';
+export const WHATSAPP_PHONE = '5492215681131';
 
 // CTAs genéricos (hero, header, footer, contacto).
 export const WHATSAPP_GENERIC_MESSAGE =

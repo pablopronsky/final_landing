@@ -40,7 +40,7 @@ export const Superficies = () => (
           key={service.title}
           variants={fadeUp}
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className={`group relative overflow-hidden border border-grafito ${service.big ? 'md:row-span-2' : ''}`}
+          className={`group relative overflow-hidden rounded-[3px] border border-grafito ${service.big ? 'md:row-span-2' : ''}`}
         >
           <motion.div
             initial={{ clipPath: 'inset(8% 8% 8% 8%)' }}
@@ -59,7 +59,7 @@ export const Superficies = () => (
             />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-surface-1/95 via-surface-1/35 to-surface-1/10 group-hover:from-surface-1/85 group-hover:via-surface-1/25 transition-all duration-500" />
-          <div className="absolute inset-0 border border-transparent group-hover:border-cobre/50 transition-colors duration-500" />
+          <div className="absolute inset-0 rounded-[3px] border border-transparent group-hover:border-cobre/50 transition-colors duration-500" />
           <div className="absolute inset-0 shadow-[inset_0_0_0_1px_transparent] group-hover:shadow-[inset_0_0_40px_-6px_rgba(195,138,90,0.45)] transition-shadow duration-500" />
 
           <div className="absolute inset-0 p-7 md:p-8 flex flex-col justify-end">
