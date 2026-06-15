@@ -53,7 +53,8 @@ export const Superficies = () => (
               src={service.img}
               alt={service.title}
               fill
-              sizes="(min-width: 768px) 33vw, 100vw"
+              quality={90}
+              sizes={service.big ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 33vw, 100vw'}
               className="object-cover saturate-[0.85] transition-all duration-700 group-hover:saturate-110 group-hover:scale-105"
             />
           </motion.div>
