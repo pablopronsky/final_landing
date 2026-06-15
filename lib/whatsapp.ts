@@ -1,0 +1,22 @@
+// Helper único para armar deep-links de WhatsApp con texto real y URL-encodeado.
+// Número operativo de la marca.
+export const WHATSAPP_PHONE = '5492215680778';
+
+// CTAs genéricos (hero, header, footer, contacto).
+export const WHATSAPP_GENERIC_MESSAGE =
+  'Hola, quiero coordinar un diagnóstico técnico para mi obra.';
+
+/** Arma un link wa.me con el mensaje URL-encodeado. */
+export function buildWhatsAppUrl(message: string = WHATSAPP_GENERIC_MESSAGE): string {
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+}
+
+/** Deep-link por servicio, interpolando el material real (sin corchetes). */
+export function whatsAppForMaterial(material: string): string {
+  return buildWhatsAppUrl(
+    `Hola, quiero coordinar un diagnóstico técnico para una obra de ${material}.`
+  );
+}
+
+// Link genérico precomputado (compat con imports existentes).
+export const WHATSAPP_URL = buildWhatsAppUrl();

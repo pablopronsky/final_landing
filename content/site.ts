@@ -15,7 +15,7 @@ export const MOBILE_NAV_LINKS: { href: string; label: string }[] = [
 ];
 
 export const HERO = {
-  eyebrow: 'Superficies y Terminaciones · City Bell · Gonnet · La Plata',
+  eyebrow: 'Pisos vinílicos · Flotantes · Madera · Decks · Revestimientos — City Bell · Gonnet · La Plata',
   headlineLines: ['Cada obra tiene un', 'punto de partida.'],
   subheadPrefix: 'Nosotros lo llamamos',
   subheadEmphasis: 'cota cero',
@@ -92,13 +92,13 @@ export const SUPERFICIES = {
   headingLines: ['Superficies y', 'Terminaciones'],
 };
 
-export const SERVICES: { img: string; title: string; desc: string; big: boolean }[] = [
-  { img: '/images/servicio-01.webp', title: 'Pisos SPC & Vinílicos', desc: 'Estabilidad dimensional y resistencia al agua. El sistema correcto para cocinas, baños y alto tránsito.', big: true },
-  { img: '/images/servicio-02.webp', title: 'Pisos Flotantes', desc: 'Calidez acústica y visual impecable. El estándar para dormitorios y livings que exigen confort.', big: false },
-  { img: '/images/servicio-03.webp', title: 'Madera Natural', desc: 'Material vivo, instalado con norma técnica. Aclimatación, dilatación y fijación controladas.', big: false },
-  { img: '/images/servicio-04.webp', title: 'Decks WPC', desc: 'Exteriores estables al sol y la lluvia, con estructura ventilada y mantenimiento mínimo.', big: false },
-  { img: '/images/servicio-05.webp', title: 'Revestimientos', desc: 'Acentos arquitectónicos para interiores. Paneles ranurados y placas de diseño con anclajes invisibles.', big: true },
-  { img: '/images/servicio-06.webp', title: 'Restauración', desc: 'Superficies clásicas recuperadas a nuevo. Pulido e hidrolaqueado sin alterar la esencia original.', big: false },
+export const SERVICES: { img: string; title: string; desc: string; big: boolean; material: string }[] = [
+  { img: '/images/servicio-01.webp', title: 'Pisos SPC & Vinílicos', desc: 'Estabilidad dimensional y resistencia al agua. El sistema correcto para cocinas, baños y alto tránsito.', big: true, material: 'pisos SPC / vinílicos' },
+  { img: '/images/servicio-02.webp', title: 'Pisos Flotantes', desc: 'Calidez acústica y visual impecable. El estándar para dormitorios y livings que exigen confort.', big: false, material: 'pisos flotantes' },
+  { img: '/images/servicio-03.webp', title: 'Madera Natural', desc: 'Material vivo, instalado con norma técnica. Aclimatación, dilatación y fijación controladas.', big: false, material: 'madera natural' },
+  { img: '/images/servicio-04.webp', title: 'Decks WPC', desc: 'Exteriores estables al sol y la lluvia, con estructura ventilada y mantenimiento mínimo.', big: false, material: 'decks WPC' },
+  { img: '/images/servicio-05.webp', title: 'Revestimientos', desc: 'Acentos arquitectónicos para interiores. Paneles ranurados y placas de diseño con anclajes invisibles.', big: true, material: 'revestimientos' },
+  { img: '/images/servicio-06.webp', title: 'Restauración', desc: 'Superficies clásicas recuperadas a nuevo. Pulido e hidrolaqueado sin alterar la esencia original.', big: false, material: 'restauración / pulido' },
 ];
 
 export const FAQ_SECTION = {
@@ -108,7 +108,7 @@ export const FAQ_SECTION = {
 };
 
 export const FAQS: { q: string; a: string }[] = [
-  { q: '¿Cómo funciona el presupuesto? ¿Cuánto sale?', a: 'No damos presupuesto sin diagnóstico previo. Sin medir la humedad y el estado del contrapiso, cualquier número es mentira. Primero medimos, después hablamos de inversión.' },
+  { q: '¿Cómo funciona el presupuesto? ¿Cuánto sale?', a: 'Podemos brindarte una referencia inicial. El presupuesto definitivo surge del diagnóstico técnico. Relevamos la superficie, verificamos la base y definimos el alcance real de la obra. Así evitamos imprevistos, diferencias y sobrecostos durante la ejecución.' },
   { q: '¿Tengo que preparar mi contrapiso antes de que vengan?', a: 'No necesariamente. Nuestro equipo evalúa si el sustrato está en condiciones durante el diagnóstico técnico. De ser necesario, nos encargamos nosotros de la nivelación y preparación.' },
   { q: '¿Instalan materiales que yo ya compré?', a: 'Sí. Nuestro valor central es controlar la instalación. Si ya invertiste en el material, repetimos el diagnóstico técnico y aplicamos nuestro protocolo para asegurar que no falle por errores de base.' },
   { q: '¿Qué revisan en el relevamiento?', a: 'Medimos los niveles de humedad residual con higrómetro, verificamos la planimetría (que el piso esté recto y a nivel) y evaluamos la solidez general del contrapiso.' },
@@ -121,6 +121,8 @@ export const CONTACTO = {
   heading: 'Antes de elegir el material, revisemos si tu obra está lista para recibirlo.',
   subheading: 'Solicitá un diagnóstico técnico previo en obra, sin compromiso.',
   ctaLabel: 'PEDÍ TU DIAGNÓSTICO',
+  fichaTitle: 'Tu diagnóstico incluye:',
+  fichaItems: ['Medición de humedad', 'Planimetría', 'Sistema recomendado'],
   datumLabel: 'COTA 0.00 — PUNTO DE ENTREGA',
   closingParagraph: 'Trabajamos sobre obra de arquitectura, reformas integrales y residencias. Tomamos un número limitado de obras por mes para sostener el protocolo.',
   location: 'City Bell / Gonnet',

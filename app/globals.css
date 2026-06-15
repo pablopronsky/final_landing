@@ -16,7 +16,7 @@
   /* Verde de marca de WhatsApp — no forma parte de la paleta Cota Cero */
   --color-whatsapp: #25D366;
 
-  --font-display: var(--font-barlow-condensed), sans-serif;
+  --font-display: var(--font-montserrat), sans-serif;
   --font-serif: var(--font-cormorant), serif;
   --font-sans: var(--font-ibm-plex-sans), sans-serif;
   --font-mono: var(--font-courier-prime), monospace;
@@ -39,6 +39,20 @@
   #faq,
   #contacto {
     scroll-margin-top: 96px;
+  }
+
+  /* Foco visible para teclado en todos los interactivos.
+     El remate cobre es marca gráfica; el offset negro garantiza visibilidad
+     también sobre secciones claras (hueso). */
+  :focus-visible {
+    outline: 2px solid var(--color-cobre);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(31, 31, 31, 0.55);
+    border-radius: 1px;
+  }
+  /* Sobre fondo claro, el halo de contraste se invierte a hueso. */
+  .bg-hueso :focus-visible {
+    box-shadow: 0 0 0 4px rgba(245, 242, 237, 0.9);
   }
 }
 

@@ -26,14 +26,30 @@ export const Contacto = () => (
       <motion.h3 variants={fadeUp} transition={{ duration: 0.7 }} className="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold uppercase leading-[0.98] tracking-tighter text-balance mb-6">
         {CONTACTO.heading}
       </motion.h3>
-      <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="text-[21px] md:text-[25px] italic text-cobre font-serif mb-12">
+      <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="text-[21px] md:text-[25px] italic text-grafito font-serif mb-12">
         {CONTACTO.subheading}
       </motion.p>
 
       <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
-        <ButtonCTA href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" variant="dark" location="contacto" className="px-12 py-6 text-[16px] mb-6">
+        <ButtonCTA href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" variant="dark" location="contacto" className="px-12 py-6 text-[16px] mb-8">
           {CONTACTO.ctaLabel}
         </ButtonCTA>
+      </motion.div>
+
+      {/* Ficha técnica — qué incluye el diagnóstico. Borde hairline, microcuadrado
+          cobre como marca de ítem (sin íconos ni color de relleno). */}
+      <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="w-full max-w-sm border border-negro/15 px-7 py-6 mb-12 text-left">
+        <p className="font-display text-[12px] font-bold uppercase tracking-[0.25em] text-grafito mb-4">
+          {CONTACTO.fichaTitle}
+        </p>
+        <ul className="flex flex-col gap-3">
+          {CONTACTO.fichaItems.map((item) => (
+            <li key={item} className="flex items-center gap-3 text-[15px] text-negro/80">
+              <span className="h-[7px] w-[7px] bg-cobre shrink-0" aria-hidden="true" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </motion.div>
 
       {/* datum bookend — closing the loop opened in the hero */}
@@ -54,7 +70,7 @@ export const Contacto = () => (
         <span>IG {SITE.instagram}</span>
       </div>
       <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center">
-        <WhatsAppLink href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" location="footer" className="text-cobre hover:text-cobre/70 transition-colors">
+        <WhatsAppLink href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" location="footer" className="text-grafito hover:text-negro underline underline-offset-4 decoration-cobre transition-colors">
           WhatsApp: {SITE.whatsappDisplay}
         </WhatsAppLink>
         <span>© {new Date().getFullYear()} {CONTACTO.watermark}</span>

@@ -1,5 +1,4 @@
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar';
-import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat';
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { TrustBar } from '@/components/sections/TrustBar';
@@ -25,7 +24,6 @@ export default function Home() {
       <Faq />
       <Contacto />
       <MobileCta />
-      <WhatsAppFloat />
     </main>
   );
 }

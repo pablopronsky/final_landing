@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed, Cormorant_Garamond, IBM_Plex_Sans, Courier_Prime } from 'next/font/google';
+import { Montserrat, Cormorant_Garamond, IBM_Plex_Sans, Courier_Prime } from 'next/font/google';
 import { MotionConfig } from 'motion/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { SITE } from '@/lib/config';
 import './globals.css';
 
-const barlowCondensed = Barlow_Condensed({
+// Display geométrica del brand book para titulares (H1/H2/H3, eyebrows y labels).
+// El cuerpo sigue en IBM Plex Sans (ver --font-sans), sin cambios.
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-barlow-condensed',
+  weight: ['300', '400', '600', '700', '800'],
+  variable: '--font-montserrat',
+  display: 'swap',
 });
 
 const cormorant = Cormorant_Garamond({
@@ -44,6 +47,11 @@ export const metadata: Metadata = {
     locale: 'es_AR',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cota Cero — Pisos, Revestimientos y Terminaciones',
+    description: 'Pisos vinílicos, flotantes, madera, decks y revestimientos con instalación bajo protocolo. No vendemos pisos: controlamos cómo se instalan.',
+  },
 };
 
 const localBusinessJsonLd = {
@@ -69,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${barlowCondensed.variable} ${cormorant.variable} ${ibmPlexSans.variable} ${courierPrime.variable}`}>
+    <html lang="es" className={`${montserrat.variable} ${cormorant.variable} ${ibmPlexSans.variable} ${courierPrime.variable}`}>
       <body className="selection:bg-cobre selection:text-negro" suppressHydrationWarning>
         <script
           type="application/ld+json"

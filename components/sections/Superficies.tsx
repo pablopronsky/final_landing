@@ -5,6 +5,8 @@ import { motion } from 'motion/react';
 import { fadeUp, staggerParent } from '@/lib/motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SUPERFICIES, SERVICES } from '@/content/site';
+import { whatsAppForMaterial } from '@/lib/whatsapp';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export const Superficies = () => (
   <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-b border-grafito bg-surface-1" id="superficies">
@@ -60,13 +62,22 @@ export const Superficies = () => (
           <div className="absolute inset-0 shadow-[inset_0_0_0_1px_transparent] group-hover:shadow-[inset_0_0_40px_-6px_rgba(195,138,90,0.45)] transition-shadow duration-500" />
 
           <div className="absolute inset-0 p-7 md:p-8 flex flex-col justify-end">
-            <span className="block font-mono text-cobre text-[13px] mb-2 tracking-wider">0{index + 1}</span>
             <h4 className="font-display text-[24px] md:text-[28px] font-bold uppercase tracking-tight leading-none mb-3">{service.title}</h4>
             <p className="text-[14px] font-normal leading-relaxed text-hueso/0 max-h-0 group-hover:text-hueso/75 group-hover:max-h-24 transition-all duration-500 ease-out overflow-hidden max-w-[34ch]">
               {service.desc}
             </p>
             <span className="block h-px w-8 bg-cobre mt-3 group-hover:w-16 transition-all duration-500" />
           </div>
+
+          {/* Deep-link de WhatsApp por servicio (message match con el material) */}
+          <a
+            href={whatsAppForMaterial(service.material)}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick(`superficie-${service.material}`)}
+            aria-label={`Coordinar un diagnóstico técnico para una obra de ${service.material}`}
+            className="absolute inset-0 z-10"
+          />
         </motion.div>
       ))}
     </motion.div>

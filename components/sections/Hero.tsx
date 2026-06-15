@@ -24,8 +24,11 @@ export const Hero = () => {
           src="/images/hero.webp"
           alt={HERO.imageAlt}
           fill
+          sizes="100vw"
+          quality={70}
           className="object-cover opacity-[0.45]"
           priority
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface-1 via-surface-1/45 to-surface-1/15" />
       </motion.div>
