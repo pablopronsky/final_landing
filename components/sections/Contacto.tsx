@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { fadeUp, staggerParent } from '@/lib/motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { DatumLine } from '@/components/ui/DatumLine';
-import { ButtonCTA } from '@/components/ui/ButtonCTA';
+import { LeadForm } from '@/components/ui/LeadForm';
 import { WhatsAppLink } from '@/components/ui/WhatsAppLink';
 import { CONTACTO } from '@/content/site';
 import { SITE, WHATSAPP_URL } from '@/lib/config';
@@ -23,17 +23,15 @@ export const Contacto = () => (
       <motion.div variants={fadeUp} transition={{ duration: 0.5 }}>
         <Eyebrow index={CONTACTO.eyebrowIndex} label={CONTACTO.eyebrowLabel} tone="muted" />
       </motion.div>
-      <motion.h3 variants={fadeUp} transition={{ duration: 0.7 }} className="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold uppercase leading-[0.98] tracking-tighter text-balance mb-6">
+      <motion.h2 variants={fadeUp} transition={{ duration: 0.7 }} className="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold uppercase leading-[0.98] tracking-tighter text-balance mb-6">
         {CONTACTO.heading}
-      </motion.h3>
+      </motion.h2>
       <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="text-[21px] md:text-[25px] italic text-grafito font-serif mb-12">
         {CONTACTO.subheading}
       </motion.p>
 
-      <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
-        <ButtonCTA href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" variant="dark" location="contacto" className="px-12 py-6 text-[16px] mb-8">
-          {CONTACTO.ctaLabel}
-        </ButtonCTA>
+      <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="w-full flex justify-center mb-12">
+        <LeadForm />
       </motion.div>
 
       {/* Ficha técnica — qué incluye el diagnóstico. Borde hairline, microcuadrado

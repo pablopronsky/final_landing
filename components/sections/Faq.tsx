@@ -46,7 +46,7 @@ export const Faq = () => {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                 >
-                  <span className="font-mono text-[13px] text-cobre tracking-widest pt-1 shrink-0">0{index + 1}</span>
+                  <span className="font-mono text-[13px] text-cobre tracking-widest pt-1 shrink-0 tabular-nums">0{index + 1}</span>
                   <span className={`font-display font-bold text-[20px] md:text-[24px] tracking-tight pr-8 transition-colors ${isOpen ? 'text-cobre' : 'text-hueso'}`}>{faq.q}</span>
                   <span className="ml-auto flex-shrink-0 text-cobre">
                     <AnimatedIcon swapKey={isOpen ? 'minus' : 'plus'}>

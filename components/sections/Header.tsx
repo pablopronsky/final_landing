@@ -60,9 +60,9 @@ export const Header = () => {
         </a>
       </div>
 
-      {/* DESKTOP NAV */}
-      <div className="hidden md:flex gap-8 items-center">
-        <nav className="flex items-center gap-2 font-mono text-[12px] tracking-[0.25em] uppercase text-hueso/55">
+      {/* DESKTOP NAV — full nav + CTA solo en lg+; en tablet usamos el menú hamburguesa */}
+      <div className="hidden lg:flex gap-8 items-center">
+        <nav className="flex items-center gap-2 font-mono text-[12px] tracking-[0.25em] uppercase text-hueso-muted">
           {NAV_LINKS.map((link, i) => (
             <span key={link.href} className="flex items-center gap-2">
               {i > 0 && <span className="text-cobre">·</span>}
@@ -78,7 +78,7 @@ export const Header = () => {
       {/* MOBILE NAV TOGGLE */}
       <button
         ref={toggleRef}
-        className="md:hidden z-50 p-2 -mr-2 text-hueso"
+        className="lg:hidden z-50 p-2 -mr-2 text-hueso"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
         aria-expanded={isMobileMenuOpen}
@@ -96,7 +96,7 @@ export const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-0 left-0 w-full h-screen bg-surface-0 flex flex-col items-center justify-center gap-12 z-40 text-center px-6"
+            className="absolute top-0 left-0 w-full h-[100svh] bg-surface-0 flex flex-col items-center justify-center gap-12 z-40 text-center px-6"
           >
             <nav className="flex flex-col gap-8 items-center">
               {MOBILE_NAV_LINKS.map((link, i) => (

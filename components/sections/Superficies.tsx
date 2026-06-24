@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import { ArrowUpRight } from 'lucide-react';
 import { fadeUp, staggerParent } from '@/lib/motion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { SUPERFICIES, SERVICES } from '@/content/site';
@@ -64,21 +65,24 @@ export const Superficies = () => (
 
           <div className="absolute inset-0 p-7 md:p-8 flex flex-col justify-end">
             <h4 className="font-display text-[24px] md:text-[28px] font-bold uppercase tracking-tight leading-none mb-3">{service.title}</h4>
-            <p className="text-[14px] font-normal leading-relaxed text-hueso/0 max-h-0 group-hover:text-hueso/75 group-hover:max-h-24 transition-[color,max-height] duration-500 ease-out overflow-hidden max-w-[34ch]">
+            {/* Descripción visible siempre en mobile; en desktop (lg+) colapsa y se revela en hover */}
+            <p className="text-[14px] font-normal leading-relaxed text-hueso/80 max-w-[34ch] lg:text-hueso/0 lg:max-h-0 lg:overflow-hidden lg:group-hover:text-hueso/80 lg:group-hover:max-h-28 lg:transition-[color,max-height] lg:duration-500 lg:ease-out">
               {service.desc}
             </p>
-            <span className="block h-px w-8 bg-cobre mt-3 group-hover:w-16 transition-[width] duration-500" />
-          </div>
 
-          {/* Deep-link de WhatsApp por servicio (message match con el material) */}
-          <a
-            href={whatsAppForMaterial(service.material)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick(`superficie-${service.material}`)}
-            aria-label={`Coordinar un diagnóstico técnico para una obra de ${service.material}`}
-            className="absolute inset-0 z-10"
-          />
+            {/* CTA explícito (deep-link por material) — reemplaza el overlay que secuestraba toda la card */}
+            <a
+              href={whatsAppForMaterial(service.material)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(`superficie-${service.material}`)}
+              aria-label={`Coordinar un diagnóstico técnico para una obra de ${service.material}`}
+              className="relative z-10 mt-4 inline-flex items-center gap-2 self-start font-display text-[12px] font-bold uppercase tracking-[0.15em] text-cobre-light hover:text-hueso transition-colors"
+            >
+              Coordinar diagnóstico
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+            </a>
+          </div>
         </motion.div>
       ))}
     </motion.div>

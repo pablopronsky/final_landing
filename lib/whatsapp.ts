@@ -18,5 +18,23 @@ export function whatsAppForMaterial(material: string): string {
   );
 }
 
+export interface LeadInput {
+  nombre: string;
+  telefono: string;
+  localidad: string;
+  obra?: string;
+}
+
+/** Deep-link de WhatsApp pre-rellenado con los datos del formulario de contacto. */
+export function whatsAppForLead({ nombre, telefono, localidad, obra }: LeadInput): string {
+  const lines = [
+    `Hola, soy ${nombre.trim()}. Quiero coordinar un diagnóstico técnico para mi obra.`,
+    `Localidad: ${localidad.trim()}`,
+    obra?.trim() ? `Obra: ${obra.trim()}` : '',
+    `Tel: ${telefono.trim()}`,
+  ].filter(Boolean);
+  return buildWhatsAppUrl(lines.join('\n'));
+}
+
 // Link genérico precomputado (compat con imports existentes).
 export const WHATSAPP_URL = buildWhatsAppUrl();

@@ -16,4 +16,4 @@ export const SITE = {
 } as const;
 
 // Re-export para mantener estables los imports existentes (`@/lib/config`).
-export { WHATSAPP_URL, buildWhatsAppUrl, whatsAppForMaterial } from './whatsapp';
+export { WHATSAPP_URL, WHATSAPP_PHONE, buildWhatsAppUrl, whatsAppForMaterial, whatsAppForLead } from './whatsapp';

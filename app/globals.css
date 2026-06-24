@@ -8,6 +8,15 @@
   --color-hueso: #F5F2ED;
   --color-piedra: #B8AEA3;
 
+  /* Cobre claro — contraste AA para texto/íconos chicos sobre fondo oscuro. */
+  --color-cobre-light: #E8B888;
+
+  /* Texto atenuado con contraste AA — reemplazan opacidades arbitrarias
+     (hueso/55, hueso/35, negro/40) que no llegaban a 4.5:1. */
+  --color-hueso-muted: #C7C1B8;
+  --color-hueso-subtle: #9A938A;
+  --color-negro-muted: #4A4641;
+
   /* Derivados de superficie (oscurecidos del grafito, extensión web) */
   --color-surface-0: #1A1B1D;
   --color-surface-1: #1F2022;
@@ -116,7 +125,7 @@
   }
 
   .text-fluid-hero {
-    font-size: clamp(2.75rem, 4vw + 1.5rem, 6.4rem);
+    font-size: clamp(2.5rem, 2.5vw + 1.75rem, 5.25rem);
   }
 
   .text-fluid-h2 {

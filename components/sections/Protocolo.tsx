@@ -69,7 +69,7 @@ export const Protocolo = () => {
                   <span className="absolute left-0 top-0 lg:relative lg:mb-6 flex items-center justify-center w-[52px] h-[52px] rounded-full bg-surface-2 border border-hueso/15 group-hover:border-cobre transition-colors duration-400">
                     <Icon className="w-5 h-5 text-cobre" strokeWidth={1.6} />
                   </span>
-                  <span className="block font-mono text-cobre text-[34px] md:text-[40px] font-semibold leading-none mb-2 tracking-tight transition-transform duration-400 group-hover:-translate-y-1">{step.id}</span>
+                  <span className="block font-mono text-cobre text-[34px] md:text-[40px] font-semibold leading-none mb-2 tracking-tight tabular-nums transition-transform duration-400 group-hover:-translate-y-1">{step.id}</span>
                   <h4 className="block font-display text-[19px] font-bold uppercase mb-2 tracking-wide">{step.title}</h4>
                   <p className="block text-[16px] md:text-[17px] leading-[1.7] text-hueso/75 max-w-[30ch]">{step.desc}</p>
                 </div>

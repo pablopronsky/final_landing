@@ -23,7 +23,7 @@ export const MobileCta = () => {
       animate={{ y: isVisible ? '0%' : '110%' }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       aria-hidden={!isVisible}
-      className="md:hidden fixed bottom-0 left-0 w-full z-40 border-t border-cobre/70 bg-negro/95 backdrop-blur-sm [padding-bottom:env(safe-area-inset-bottom)]"
+      className="lg:hidden fixed bottom-0 left-0 w-full z-40 border-t border-cobre/70 bg-negro/95 backdrop-blur-sm [padding-bottom:env(safe-area-inset-bottom)]"
     >
       <a
         href={buildWhatsAppUrl()}

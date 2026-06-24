@@ -24,7 +24,7 @@ export const Manifiesto = () => (
       <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="lg:col-span-4 xl:col-span-5 flex items-start lg:items-end lg:justify-end">
         <div className="lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-cobre/40 pl-5 lg:pl-0 lg:pr-5 py-1">
           <span className="block font-mono text-[11px] tracking-[0.3em] uppercase text-cobre mb-1">{MANIFIESTO.sectionRef}</span>
-          <span className="block font-mono text-[11px] tracking-[0.3em] uppercase text-negro/40">{MANIFIESTO.sectionLabel}</span>
+          <span className="block font-mono text-[11px] tracking-[0.3em] uppercase text-negro-muted">{MANIFIESTO.sectionLabel}</span>
         </div>
       </motion.div>
     </motion.div>

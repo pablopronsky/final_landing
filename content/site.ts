@@ -15,13 +15,16 @@ export const MOBILE_NAV_LINKS: { href: string; label: string }[] = [
 ];
 
 export const HERO = {
-  eyebrow: 'Pisos vinílicos · Flotantes · Madera · Decks · Revestimientos — City Bell · Gonnet · La Plata',
+  descriptor: 'Instalación de pisos y revestimientos bajo protocolo',
+  cities: 'City Bell · Gonnet · La Plata',
   headlineLines: ['Cada obra tiene un', 'punto de partida.'],
   subheadPrefix: 'Nosotros lo llamamos',
   subheadEmphasis: 'cota cero',
   body: 'El material no corrige una mala obra. Revisamos la base, definimos el sistema correcto y controlamos la ejecución hasta la entrega final.',
   ctaPrimary: 'PEDÍ TU DIAGNÓSTICO',
   ctaSecondary: 'CONOCÉ EL PROTOCOLO',
+  ctaMicrocopy: 'Relevamiento en obra · Sistema a medida · Agenda acotada',
+  trust: ['Diagnóstico previo en obra', 'Instalación bajo protocolo', 'Registro auditable de obra'],
   imageAlt: 'Interior de obra terminada con piso de madera — Cota Cero',
 };
 
@@ -55,7 +58,7 @@ export const PROTOCOL_STEPS: { id: string; title: string; desc: string; icon: Lu
   { id: '02', title: 'Preparación', desc: 'Acondicionamos y nivelamos el sustrato. El material aclimatado reposa en el ambiente definitivo antes de instalarse.', icon: Ruler },
   { id: '03', title: 'Ejecución', desc: 'Colocación bajo norma técnica estricta. Controlamos dilatación, anclaje y encuentros para evitar fallas a futuro.', icon: Hammer },
   { id: '04', title: 'Control', desc: 'Revisión de juntas, zócalos, perfiles y terminaciones. El nivel de detalle que separa una colocación común de una superior.', icon: SearchCheck },
-  { id: '05', title: 'Entrega', desc: 'Limpieza, registro auditable y garantía escrita. Te entregamos la obra documentando que cada etapa se cumplió.', icon: FileCheck },
+  { id: '05', title: 'Entrega', desc: 'Limpieza final y registro auditable de la obra. Te entregamos documentando que cada etapa del protocolo se cumplió.', icon: FileCheck },
 ];
 
 export const PRACTICA = {
@@ -119,7 +122,7 @@ export const CONTACTO = {
   eyebrowIndex: '06',
   eyebrowLabel: 'Contacto',
   heading: 'Antes de elegir el material, revisemos si tu obra está lista para recibirlo.',
-  subheading: 'Solicitá un diagnóstico técnico previo en obra, sin compromiso.',
+  subheading: 'Coordinamos un relevamiento técnico en tu obra antes de cualquier presupuesto.',
   ctaLabel: 'PEDÍ TU DIAGNÓSTICO',
   fichaTitle: 'Tu diagnóstico incluye:',
   fichaItems: ['Medición de humedad', 'Planimetría', 'Sistema recomendado'],
@@ -127,4 +130,17 @@ export const CONTACTO = {
   closingParagraph: 'Trabajamos sobre obra de arquitectura, reformas integrales y residencias. Tomamos un número limitado de obras por mes para sostener el protocolo.',
   location: 'City Bell / Gonnet',
   watermark: 'Cota Cero',
+  form: {
+    title: 'Coordiná tu diagnóstico',
+    nameLabel: 'Nombre',
+    namePlaceholder: 'Tu nombre',
+    phoneLabel: 'Teléfono / WhatsApp',
+    phonePlaceholder: '221 568 1131',
+    zoneLabel: 'Localidad',
+    zonePlaceholder: 'City Bell · Gonnet · La Plata…',
+    projectLabel: 'Contanos de tu obra (opcional)',
+    projectPlaceholder: 'Tipo de superficie, m² aproximados, estado actual…',
+    submit: 'PEDÍ TU DIAGNÓSTICO',
+    altPrefix: '¿Preferís hablar ahora?',
+  },
 };
