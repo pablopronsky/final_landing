@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import { fadeUp, staggerParent } from '@/lib/motion';
+import { AnimatedIcon } from '@/components/ui/AnimatedIcon';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { FAQ_SECTION, FAQS } from '@/content/site';
 
@@ -48,7 +49,9 @@ export const Faq = () => {
                   <span className="font-mono text-[13px] text-cobre tracking-widest pt-1 shrink-0">0{index + 1}</span>
                   <span className={`font-display font-bold text-[20px] md:text-[24px] tracking-tight pr-8 transition-colors ${isOpen ? 'text-cobre' : 'text-hueso'}`}>{faq.q}</span>
                   <span className="ml-auto flex-shrink-0 text-cobre">
-                    {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                    <AnimatedIcon swapKey={isOpen ? 'minus' : 'plus'}>
+                      {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                    </AnimatedIcon>
                   </span>
                 </button>
                 <AnimatePresence initial={false}>

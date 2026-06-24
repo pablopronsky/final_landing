@@ -55,19 +55,19 @@ export const Superficies = () => (
               fill
               quality={90}
               sizes={service.big ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 33vw, 100vw'}
-              className="object-cover saturate-[0.85] transition-all duration-700 group-hover:saturate-110 group-hover:scale-105"
+              className="object-cover saturate-[0.85] transition-[filter,transform] duration-700 group-hover:saturate-110 group-hover:scale-105"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-surface-1/95 via-surface-1/35 to-surface-1/10 group-hover:from-surface-1/85 group-hover:via-surface-1/25 transition-all duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-1/95 via-surface-1/35 to-surface-1/10 group-hover:from-surface-1/85 group-hover:via-surface-1/25 transition-[background-image] duration-500" />
           <div className="absolute inset-0 rounded-[3px] border border-transparent group-hover:border-cobre/50 transition-colors duration-500" />
           <div className="absolute inset-0 shadow-[inset_0_0_0_1px_transparent] group-hover:shadow-[inset_0_0_40px_-6px_rgba(195,138,90,0.45)] transition-shadow duration-500" />
 
           <div className="absolute inset-0 p-7 md:p-8 flex flex-col justify-end">
             <h4 className="font-display text-[24px] md:text-[28px] font-bold uppercase tracking-tight leading-none mb-3">{service.title}</h4>
-            <p className="text-[14px] font-normal leading-relaxed text-hueso/0 max-h-0 group-hover:text-hueso/75 group-hover:max-h-24 transition-all duration-500 ease-out overflow-hidden max-w-[34ch]">
+            <p className="text-[14px] font-normal leading-relaxed text-hueso/0 max-h-0 group-hover:text-hueso/75 group-hover:max-h-24 transition-[color,max-height] duration-500 ease-out overflow-hidden max-w-[34ch]">
               {service.desc}
             </p>
-            <span className="block h-px w-8 bg-cobre mt-3 group-hover:w-16 transition-all duration-500" />
+            <span className="block h-px w-8 bg-cobre mt-3 group-hover:w-16 transition-[width] duration-500" />
           </div>
 
           {/* Deep-link de WhatsApp por servicio (message match con el material) */}

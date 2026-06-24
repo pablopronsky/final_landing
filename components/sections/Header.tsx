@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { AnimatedIcon } from '@/components/ui/AnimatedIcon';
 import { ButtonCTA } from '@/components/ui/ButtonCTA';
 import { NAV_LINKS, MOBILE_NAV_LINKS } from '@/content/site';
 
@@ -82,7 +83,9 @@ export const Header = () => {
         aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
         aria-expanded={isMobileMenuOpen}
       >
-        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        <AnimatedIcon swapKey={isMobileMenuOpen ? 'close' : 'open'}>
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </AnimatedIcon>
       </button>
 
       {/* MOBILE MENU FULLSCREEN */}

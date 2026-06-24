@@ -26,7 +26,7 @@ export const ProofImage = ({
           alt={alt}
           fill
           sizes={sizes}
-          className="object-cover transition-all duration-700 grayscale-[35%] group-hover:grayscale-0 group-hover:scale-[1.04]"
+          className="object-cover transition-[filter,transform] duration-700 grayscale-[35%] group-hover:grayscale-0 group-hover:scale-[1.04]"
           onError={() => setError(true)}
         />
       )}
